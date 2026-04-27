@@ -555,7 +555,7 @@ body.menu-open .menu-backdrop {
   color: #76f4ff;
 }
 
-.nav-link.active::after {
+/* .nav-link.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -564,7 +564,7 @@ body.menu-open .menu-backdrop {
   height: 2px;
   background: #76f4ff;
   border-radius: 999px;
-}
+} */
 
 .loading-page {
   position: fixed;
