@@ -34,7 +34,10 @@ body.no-scroll {
   padding: 0 24px;
   display: flex;
   justify-content: center;
-  background: rgba(8, 3, 30, 0);
+  background: #2222229f;
+  backdrop-filter: blur(5px);
+  border: #22222279 1px dashed;
+  padding: 5px 25px;
   z-index: 10;
   margin-top: 30px;
   transition: transform 0.4s ease;
@@ -144,6 +147,8 @@ body.no-scroll {
   bottom: 0;
   width: min(320px, 85vw);
   background: #2222229f;
+  backdrop-filter: blur(8px);
+   border: #161616 1px solid;
   transform: translateX(-110%);
   transition: transform 0.32s ease;
   z-index: 30;
@@ -151,8 +156,7 @@ body.no-scroll {
   display: flex;
   flex-direction: column;
   font-family: "Raleway", sans-serif;
-  backdrop-filter: blur(8px);
-   border: #161616 1px solid;
+  
 }
 
 .mobile-menu-header {
@@ -237,7 +241,7 @@ body.no-scroll {
 }
 
 .sec2 {
-  margin-top: -35px;
+  margin-top: -31px;
   position: relative;
   width: 100%;
   top: 0;
@@ -601,7 +605,7 @@ body.menu-open .menu-backdrop {
   color: #76f4ff;
 }
 
-.nav-link.active::after {
+/* .nav-link.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -610,7 +614,7 @@ body.menu-open .menu-backdrop {
   height: 2px;
   background: #76f4ff;
   border-radius: 999px;
-}
+} */
 
 .loading-page {
   position: fixed;
