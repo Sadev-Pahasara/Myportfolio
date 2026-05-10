@@ -237,6 +237,7 @@ body.no-scroll {
 }
 
 .sec2 {
+  margin-top: -35px;
   position: relative;
   width: 100%;
   top: 0;
@@ -369,7 +370,8 @@ body.no-scroll {
   position: relative;
   top: 0;
   min-height: 100vh;
-  background: #000000;
+  background: #00000096;
+  backdrop-filter: blur(8px);
   padding: 4rem 2rem;
   z-index: 1;
 }
@@ -381,9 +383,11 @@ body.no-scroll {
 
 .sec3 img {
   margin-top: 1.5rem;
-  width: 100%;
-  max-width: 400px;
+  width: 170%;
+  max-width: 500px;
   border-radius: 10px;
+  margin-left: -90px;
+  filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.729));
 }
 
 .sec3 p {
@@ -392,6 +396,7 @@ body.no-scroll {
   font-family: "Raleway", sans-serif;
   text-align: justify;
   font-size: 1.25rem;
+  width: 350px;
 }
 
 .loaded .sec1 h1 {
@@ -565,6 +570,7 @@ body.menu-open .menu-backdrop {
   }
 
 
+
 }
 
 .nav-center {
@@ -595,7 +601,7 @@ body.menu-open .menu-backdrop {
   color: #76f4ff;
 }
 
-/* .nav-link.active::after {
+.nav-link.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -604,7 +610,7 @@ body.menu-open .menu-backdrop {
   height: 2px;
   background: #76f4ff;
   border-radius: 999px;
-} */
+}
 
 .loading-page {
   position: fixed;
