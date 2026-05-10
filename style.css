@@ -159,6 +159,13 @@ body.no-scroll {
   
 }
 
+.mobile-menu-logo{
+  scale: 0.2;
+  margin-top: -260px;
+  margin-left: -10px;
+  filter: drop-shadow(0 10px 25px rgba(119, 239, 249, 0.471));
+}
+
 .mobile-menu-header {
   display: flex;
   align-items: center;
@@ -167,6 +174,7 @@ body.no-scroll {
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 700;
+  margin-top: -220px;
 }
 
 .mobile-menu-close {
@@ -378,7 +386,7 @@ body.no-scroll {
   position: relative;
   top: 0;
   min-height: 100vh;
-  background: #00000096;
+  background: #000000ae;
   backdrop-filter: blur(8px);
   padding: 4rem 0.5rem;
   z-index: 1;
