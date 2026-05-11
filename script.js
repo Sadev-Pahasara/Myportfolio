@@ -147,3 +147,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Select the SVG path
+  const path = document.querySelector(".svg-container path");
+
+  // Get total path length
+  const pathLength = path.getTotalLength();
+
+  // Hide the path initially
+  gsap.set(path, {
+    strokeDasharray: pathLength,
+    strokeDashoffset: pathLength
+  });
+
+  // Animate drawing while scrolling
+  gsap.to(path, {
+    strokeDashoffset: 0,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".svg-container",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+    }
+  });
+});
