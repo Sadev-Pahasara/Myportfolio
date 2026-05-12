@@ -527,6 +527,7 @@ body.no-scroll {
   justify-content: center;
   margin-top: -475px;
   filter: blur(2px);
+  color: #ffffff7a;
   filter: 
     drop-shadow(0 0 5px #b4f7feba)
     drop-shadow(0 0 10px #b4f7feba)
