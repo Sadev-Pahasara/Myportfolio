@@ -275,10 +275,38 @@ body.no-scroll {
   );
 }
 
-.portfolio-header h2{
+.reveal {
+  overflow: hidden;
+}
+
+.reveal-line {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.reveal-line h2 {
   font-size: 2rem;
   font-family: "Archivo Black", sans-serif;
+  color: #ffffff;
+  animation: slide-up 0.8s ease forwards;
 }
+
+.reveal.active .reveal-line {
+  animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes reveal {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+
 
 .portfolio-grid{
   margin-left: 50px;
