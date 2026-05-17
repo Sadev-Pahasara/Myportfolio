@@ -544,30 +544,6 @@ body.no-scroll {
   }
 }
 
-.svg-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3000px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -475px;
-  filter: blur(2px);
-  color: #ffffff7a;
-  filter: 
-    drop-shadow(0 0 5px #b4f7feba)
-    drop-shadow(0 0 10px #b4f7feba)
-    drop-shadow(0 0 15px #b4f7feba)
-    drop-shadow(0 0 20px #b4f7feba);
-}
-
-.svg-container svg {
-  height: 100%;
-  z-index: 9;
-}
-
 .schools{
   gap: 1.5rem;
   justify-content: center;
