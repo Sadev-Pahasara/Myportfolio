@@ -188,6 +188,14 @@ body.no-scroll {
   line-height: 1;
   cursor: pointer;
 }
+.mobile-menu-close img {
+  width: 30px;
+  height: 30px;
+}
+
+.mobile-menu-close img:hover {
+  filter: drop-shadow(0 0 5px #ffffff);
+}
 
 .mobile-menu-nav {
   display: flex;
