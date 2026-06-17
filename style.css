@@ -10,6 +10,10 @@ body {
   height: 100vh;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body.no-scroll {
   overflow: hidden;
 }
@@ -114,13 +118,9 @@ body.no-scroll {
   cursor: pointer;
 }
 
-.menu-button .hamburger-icon {
-  display: inline-block;
-  width: 24px;
-  height: 4px;
-  background: #ffffff;
-  border-radius: 999px;
-  position: relative;
+.menu-button img {
+  width: 40px;
+  height: 40px;
 }
 
 .menu-button .hamburger-icon::before,
@@ -150,13 +150,14 @@ body.no-scroll {
   width: min(320px, 85vw);
   background: #2222229f;
   backdrop-filter: blur(8px);
-   border: #161616 1px solid;
+  border: #161616 1px solid;
   transform: translateX(-110%);
   transition: transform 0.32s ease;
   z-index: 30;
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
+  font-size: 1.25rem;
   font-family: "Raleway", sans-serif;
   
 }
@@ -165,7 +166,7 @@ body.no-scroll {
   scale: 0.2;
   margin-top: -260px;
   margin-left: -10px;
-  filter: drop-shadow(0 10px 25px rgba(119, 239, 249, 0.471));
+  filter: drop-shadow(0 10px 25px rgba(255, 255, 255, 0.529));
 }
 
 .mobile-menu-header {
@@ -912,26 +913,6 @@ body.menu-open .menu-backdrop {
 
 .sec1-left p{
   margin-left: 0px;
-}
-
-::-webkit-scrollbar {
-  width: 3px;      
-  height: 10px;     
-}
-
-::-webkit-scrollbar-track {
-  background: #0b0f1a;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #00eaff;
-  border-radius: 10px;
-  border: 2px solid #00aab9;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #0096a3;
 }
 
 [data-aos] {
