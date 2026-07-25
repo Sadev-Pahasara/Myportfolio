@@ -396,7 +396,7 @@ body.no-scroll {
 
 .sec3 {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   background: #131313;
   /* background-image: url("src/bgimg2.jpg");
   background-size: cover;
