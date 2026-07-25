@@ -396,9 +396,12 @@ body.no-scroll {
 
 .sec3 {
   position: relative;
-  top: 0;
   min-height: 100vh;
-  background: #000000ae;
+  background: #131313;
+  /* background-image: url("src/bgimg2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
   backdrop-filter: blur(8px);
   padding: 4rem 0.5rem;
   z-index: 1;
