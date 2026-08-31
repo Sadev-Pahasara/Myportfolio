@@ -395,6 +395,7 @@ body.no-scroll {
 
 
 .sec3 {
+  top: -10%;
   position: relative;
   min-height: 100dvh;
   background: #131313;
