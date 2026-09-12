@@ -421,13 +421,27 @@ body.no-scroll {
   font-family: "Archivo Black", sans-serif;
 }
 
-.sec3 img {
+.sec31 img {
   margin-top: 1.5rem;
   width: 170%;
   max-width: 500px;
-  border-radius: 10px;
   margin-left: -90px;
-  filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.729));
+  scale: 1.2;
+
+  -webkit-mask-image: url("src/mask20.png");
+  mask-image: url("src/mask20.png");
+
+  -webkit-mask-size: cover;
+  mask-size: cover;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-mode: luminance;
+  mask-mode: luminance;
 }
 
 .sec3 p {
