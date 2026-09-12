@@ -8,6 +8,7 @@
 
 body {
   height: 100vh;
+  cursor: url("src/cursor2.png"), auto;
 }
 
 body::-webkit-scrollbar {
