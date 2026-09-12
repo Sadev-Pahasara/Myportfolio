@@ -271,7 +271,7 @@ body.no-scroll {
   padding: 4rem 2rem;
   font-family: "Raleway", sans-serif;
   border-top: #00e5ff 2px solid;
-  background-image: url("src/bgimg2.jpg");
+  background-image: url("src/bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -399,11 +399,11 @@ body.no-scroll {
   top: -10%;
   position: relative;
   min-height: 100dvh;
-  background: #131313;
-  /* background-image: url("src/bgimg2.jpg");
+  /* background: #131313; */
+  background-image: url("src/bg.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   backdrop-filter: blur(8px);
   padding: 4rem 0.5rem;
   z-index: 1;
@@ -429,8 +429,8 @@ body.no-scroll {
   margin-left: -90px;
   scale: 1.2;
 
-  -webkit-mask-image: url("src/mask20.png");
-  mask-image: url("src/mask20.png");
+  -webkit-mask-image: url("src/mask21.png");
+  mask-image: url("src/mask21.png");
 
   -webkit-mask-size: cover;
   mask-size: cover;
