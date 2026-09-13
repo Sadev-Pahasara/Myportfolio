@@ -12,45 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   menuClose?.addEventListener("click", () => toggleMenu(false));
   menuBackdrop?.addEventListener("click", () => toggleMenu(false));
 
-  // ================= NAVBAR SCROLL FIX (FINAL STABLE VERSION) =================
-  let lastScrollY = window.pageYOffset;
-  let ticking = false;
-
-  window.addEventListener("scroll", () => {
-    if (!nav) return;
-
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const currentScrollY = window.pageYOffset;
-
-        const delta = currentScrollY - lastScrollY;
-
-        // ignore tiny movements (prevents flicker on mobile)
-        if (Math.abs(delta) < 5) {
-          ticking = false;
-          return;
-        }
-
-        // always show at top
-        if (currentScrollY < 80) {
-          nav.classList.remove("hidden");
-        }
-        // scroll down → hide
-        else if (delta > 0) {
-          nav.classList.add("hidden");
-        }
-        // scroll up → show
-        else if (delta < 0) {
-          nav.classList.remove("hidden");
-        }
-
-        lastScrollY = currentScrollY;
-        ticking = false;
-      });
-
-      ticking = true;
-    }
-  });
+ 
 });
 
 // ================= LOADING ANIMATION =================
@@ -146,4 +108,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+});
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+const sections = [
+    document.getElementById("top"),
+    document.getElementById("Portfolio"),
+    document.getElementById("About"),
+    document.getElementById("Services"),
+    document.getElementById("Skills"),
+    document.getElementById("Feedback"),
+    document.getElementById("Contact")
+].filter(Boolean);
+
+
+function updateActiveNav() {
+
+    let current = "top";
+
+    const scrollPosition = window.scrollY + 180;
+
+    sections.forEach(section => {
+
+        if (scrollPosition >= section.offsetTop) {
+            current = section.id;
+        }
+
+    });
+
+
+    navLinks.forEach(link => {
+
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${current}`
+        );
+
+    });
+}
+
+
+// Update while scrolling
+window.addEventListener("scroll", updateActiveNav);
+
+
+// IMPORTANT: update when page initially loads
+window.addEventListener("load", () => {
+
+    updateActiveNav();
+
+    // Run again after loader/animations finish
+    setTimeout(updateActiveNav, 500);
+    setTimeout(updateActiveNav, 1000);
 });

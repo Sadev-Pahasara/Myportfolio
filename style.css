@@ -897,6 +897,44 @@ body.menu-open .menu-backdrop {
   border-radius: 999px;
 } */
 
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+
+    background: #76f4ff;
+    border-radius: 999px;
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-indicator {
+    position: absolute;
+
+    bottom: 6px;
+    left: 0;
+
+    height: 2px;
+
+    background: #76f4ff;
+    border-radius: 999px;
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.35s ease;
+
+    pointer-events: none;
+}
+
 .loading-page {
   position: fixed;
   inset: 0;
