@@ -45,7 +45,7 @@ body.no-scroll {
   border: #22222279 1px dashed;
   padding: 5px 25px;
   z-index: 10;
-  margin-top: 30px;
+  margin-top: 20px;
   transition: transform 0.4s ease;
   border-radius: 8px;
 }
@@ -341,11 +341,11 @@ body.no-scroll {
   margin-bottom: 2rem;
   position: relative;
 
-  border: 1.5px solid rgba(0, 170, 185, 0.5);
-  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(0, 183, 255, 0.5);
+  background: rgba(255, 255, 255, 0.016);
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   border-radius: 10px;
   padding: 1.5rem;
