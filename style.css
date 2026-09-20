@@ -717,6 +717,213 @@ body.menu-open .menu-backdrop {
   visibility: visible;
 }
 
+.services {
+  top: -10%;
+  position: relative;
+  min-height: 100dvh;
+
+  background-image: url("src/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 4rem 0.5rem;
+  z-index: 1;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.15) 25%,
+    rgba(0, 0, 0, 0.55) 60%,
+    #000 100%
+  );
+
+  z-index: -1;
+}
+
+.Skills {
+  top: -10%;
+  position: relative;
+  min-height: 100dvh;
+  background: #000000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(8px);
+  padding: 4rem 0.5rem;
+  z-index: 1;
+}
+
+.skills-section {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 68px;
+}
+
+
+/* =========================
+   SKILL CARD
+========================= */
+
+.skill-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 58px 56px;
+
+    background: #050505;
+
+    border: 1px solid #151515;
+    border-radius: 40px;
+
+    box-shadow:
+        inset 0 0 30px rgba(255, 255, 255, 0.01);
+
+    transition: border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+
+.skill-card:hover {
+    border-color: #292929;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 38px;
+}
+
+
+.skill-header h3 {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+
+    color: #f5f5f5;
+}
+
+
+.skill-header span {
+    font-family: Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+
+    color: #ff2852;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-bar {
+    width: 100%;
+    height: 17px;
+
+    background: #18191b;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+.progress {
+    width: var(--progress);
+    height: 100%;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        #ff174b 0%,
+        #ff3d45 45%,
+        #ff7a18 100%
+    );
+
+    transform-origin: left;
+
+    animation: progressAnimation 1.3s ease-out forwards;
+}
+
+
+@keyframes progressAnimation {
+
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .skills-section {
+        padding: 25px 15px;
+        gap: 30px;
+    }
+
+    .skill-card {
+        padding: 35px 28px;
+        border-radius: 28px;
+    }
+
+    .skill-header {
+        margin-bottom: 25px;
+    }
+
+    .skill-header h3,
+    .skill-header span {
+        font-size: 24px;
+    }
+
+    .progress-bar {
+        height: 13px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .skill-card {
+        padding: 28px 22px;
+        border-radius: 24px;
+    }
+
+    .skill-header h3,
+    .skill-header span {
+        font-size: 21px;
+    }
+
+    .progress-bar {
+        height: 11px;
+    }
+}
+
 @media (max-width: 900px) {
 
 
