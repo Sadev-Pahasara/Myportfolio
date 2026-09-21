@@ -162,3 +162,30 @@ window.addEventListener("load", () => {
     setTimeout(updateActiveNav, 500);
     setTimeout(updateActiveNav, 1000);
 });
+
+// service card animation
+
+const serviceCards = document.querySelectorAll(".service-card");
+
+serviceCards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.setProperty("--mouse-x", "50%");
+        card.style.setProperty("--mouse-y", "50%");
+
+    });
+
+});

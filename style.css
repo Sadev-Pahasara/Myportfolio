@@ -8,7 +8,7 @@
 
 body {
   height: 100vh;
-  cursor: url("src/cursor2.png"), auto;
+  cursor: url("src/cursor3.png"), auto;
 }
 
 body::-webkit-scrollbar {
@@ -483,6 +483,22 @@ body.no-scroll {
   z-index: 1;
 }
 
+.sec3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.15) 25%,
+    rgba(0, 0, 0, 0.55) 60%,
+    #000 100%
+  );
+
+  z-index: -1;
+}
+
 .sec31 {
   display: flex;
   flex-direction: column;
@@ -717,12 +733,16 @@ body.menu-open .menu-backdrop {
   visibility: visible;
 }
 
+/* =========================
+   SERVICES SECTION
+========================= */
+
 .services {
   top: -10%;
   position: relative;
   min-height: 100dvh;
 
-  background-image: url("src/bg.jpg");
+  background-image: url("src/me5.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -736,15 +756,337 @@ body.menu-open .menu-backdrop {
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.15) 25%,
-    rgba(0, 0, 0, 0.55) 60%,
-    #000 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      #000 0%,
+      rgba(0, 0, 0, 0.55) 15%,
+      transparent 35%,
+      transparent 65%,
+      rgba(0, 0, 0, 0.55) 85%,
+      #000 100%
+    ),
+    rgba(0, 0, 0, 0.50);
 
   z-index: -1;
+}
+
+.services {
+    text-align: center;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.services-header h2 {
+    margin: 0;
+
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 800;
+
+    color: #fff;
+    line-height: 1.1;
+}
+
+.services-header h2 span {
+    background: linear-gradient(
+        90deg,
+        #243eff,
+        #236cff,
+        #00d0ff
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;    
+    animation: textGlow 5s ease-in-out infinite;
+}
+
+.services-header p {
+    margin-top: 1.5rem;
+
+    color: #a8a8b2;
+    font-size: 1.15rem;
+    line-height: 1.65;
+}
+
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-grid {
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 10px;
+    gap: 2.5rem;
+}
+
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 2.5rem 2.5rem 2.2rem;
+
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --service-color: #b84cff;
+
+    background: rgba(7, 7, 9, 0.45);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 28px;
+
+    transition:
+        border-color 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* MOUSE FOLLOW SPOTLIGHT */
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        280px circle at var(--mouse-x) var(--mouse-y),
+        color-mix(in srgb, var(--service-color) 22%, transparent),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Show spotlight while hovering */
+.service-card:hover::before {
+    opacity: 1;
+}
+
+
+/* Keep content above spotlight */
+.service-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.service-card:nth-child(1) {
+    --service-color: #b84cff;
+}
+
+.service-card:nth-child(2) {
+    --service-color: #648cff;
+}
+
+.service-card:nth-child(3) {
+    --service-color: #ff3d2e;
+}
+
+.service-card:nth-child(4) {
+    --service-color: #00d9c7;
+}
+
+.service-card:nth-child(5) {
+    --service-color: #d84bdc;
+}
+
+.service-card:nth-child(6) {
+    --service-color: #ffae00;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.service-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #080808;
+
+    border: 2px solid var(--service-color);
+
+    margin-bottom: 2.7rem;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.service-icon i {
+    font-size: 30px;
+    color: #fff;
+}
+
+
+/* icon hover */
+
+.service-card:hover .service-icon {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px color-mix(
+            in srgb,
+            var(--service-color) 25%,
+            transparent
+        );
+}
+
+
+/* =========================
+   ICON COLORS
+========================= */
+
+.web-icon {
+    border-color: #b54cff;
+    box-shadow: 0 0 15px rgba(181, 76, 255, 0.15);
+}
+
+.game-icon {
+    border-color: #ff452f;
+    box-shadow: 0 0 15px rgba(255, 69, 47, 0.15);
+}
+
+.video-icon {
+    border-color: #d84bdc;
+    box-shadow: 0 0 15px rgba(216, 75, 220, 0.15);
+}
+
+.model-icon {
+    border-color: #00d9c7;
+    box-shadow: 0 0 15px rgba(0, 217, 199, 0.15);
+}
+
+.cloud-icon {
+    border-color: #ffb000;
+    box-shadow: 0 0 15px rgba(255, 176, 0, 0.15);
+}
+
+.software-icon {
+    border-color: #638cff;
+    box-shadow: 0 0 15px rgba(99, 140, 255, 0.15);
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.service-card h3 {
+    margin: 0 0 1rem;
+
+    color: #fff;
+
+    font-size: 1.65rem;
+    font-weight: 750;
+
+    line-height: 1.25;
+
+    transition: color 0.4s ease;
+}
+
+.service-card:hover h3 {
+    color: var(--service-color);
+}
+
+.service-card p {
+    margin: 0;
+
+    color: #a3a3ad;
+
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .services {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .services {
+        padding: 3rem 1.2rem 5rem;
+    }
+
+    .services-header {
+        margin-bottom: 3rem;
+    }
+
+    .services-header h2 {
+        font-size: 3rem;
+    }
+
+    .services-header p {
+        font-size: 1rem;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 2rem;
+        border-radius: 22px;
+    }
+
+    .service-icon {
+        width: 62px;
+        height: 62px;
+        margin-bottom: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .service-card p {
+        font-size: 0.98rem;
+    }
 }
 
 .Skills {
@@ -1006,6 +1348,14 @@ body.menu-open .menu-backdrop {
 ================================ */
 
 @media (max-width: 550px) {
+
+  .services {
+    background-image: url("src/me2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+  }
 
   .skill-section {
     width: 100%;
