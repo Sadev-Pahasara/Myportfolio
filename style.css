@@ -277,7 +277,7 @@ body.no-scroll {
   height: 100vh;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("src/my.png");
+    url("src/me3.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -740,8 +740,7 @@ body.menu-open .menu-backdrop {
 .services {
   top: -10%;
   position: relative;
-  min-height: 100dvh;
-
+  min-height: 100dvh;  
   background-image: url("src/me5.png");
   background-size: cover;
   background-position: center;
@@ -1042,6 +1041,12 @@ body.menu-open .menu-backdrop {
 
 
 @media (max-width: 700px) {
+  
+    .sec1 {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("src/me2.png");
+    }
 
     .services {
         padding: 3rem 1.2rem 5rem;
@@ -1348,6 +1353,7 @@ body.menu-open .menu-backdrop {
 ================================ */
 
 @media (max-width: 550px) {
+
 
   .services {
     background-image: url("src/me2.png");
