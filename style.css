@@ -105,6 +105,7 @@ body.no-scroll {
   align-items: center;
   gap: 26px;
   font-family: "Raleway", sans-serif;
+  font-size: clamp(0.85rem, 1.2vw, 1.5rem);
 }
 
 .menu-button {
@@ -167,7 +168,7 @@ body.no-scroll {
   scale: 0.2;
   margin-top: -550px;
   margin-left: -65%;
-  filter: drop-shadow(0 10px 25px rgba(255, 255, 255, 0.264));
+  filter: drop-shadow(0 10px 25px rgba(10, 172, 222, 0.619));
 }
 
 .mobile-menu-logo img {
@@ -201,7 +202,7 @@ body.no-scroll {
   font-size: 1.75rem;
   line-height: 1;
   cursor: pointer;
-  margin-top: -500px;
+  margin-top: -550px;
 }
 
 .mobile-menu-close img {
@@ -274,7 +275,7 @@ body.no-scroll {
   justify-content: center;
   gap: 2rem;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("src/me3.png");
@@ -1044,11 +1045,11 @@ body.menu-open .menu-backdrop {
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
-
 @media (max-width: 1100px) {
+
+  .nav{
+    width: 80%;
+  }
 
     .services {
         padding-left: 5%;
@@ -1059,7 +1060,6 @@ body.menu-open .menu-backdrop {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 
 @media (max-width: 700px) {
   
@@ -1911,17 +1911,6 @@ body.menu-open .menu-backdrop {
 .nav-link:hover {
   color: #76f4ff;
 }
-
-/* .nav-link.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
-  height: 2px;
-  background: #76f4ff;
-  border-radius: 999px;
-} */
 
 .nav-link::after {
     content: "";
