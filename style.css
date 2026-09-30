@@ -2205,6 +2205,7 @@ body.menu-open .menu-backdrop {
         max-width: 600px;
         margin: auto;
         width: 100%;
+        font-size: 1rem;
     }
 
     .contact-form-wrapper {
@@ -2214,7 +2215,6 @@ body.menu-open .menu-backdrop {
 
     .footer-container {
         grid-template-columns: 1fr 1fr;
-
         gap: 40px;
     }
 }
@@ -2259,9 +2259,6 @@ body.menu-open .menu-backdrop {
 }
 
 
-/* =========================
-   PROGRESS ANIMATION
-========================= */
 
 @keyframes progressAnimation {
 
@@ -2276,9 +2273,6 @@ body.menu-open .menu-backdrop {
 }
 
 
-/* =========================
-   TABLET
-========================= */
 
 @media (max-width: 900px) {
 
