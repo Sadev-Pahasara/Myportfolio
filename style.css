@@ -1569,6 +1569,696 @@ body.menu-open .menu-backdrop {
 }
 
 
+.contact-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 90px 7% 70px;
+    background: #000;
+    overflow: hidden;
+}
+
+
+/* Background glow */
+
+.contact-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 100px;
+    right: -200px;
+
+    background: rgba(30, 158, 255, 0.08);
+
+    filter: blur(120px);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* Heading */
+
+.contact-heading {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+
+.contact-heading h2 {
+    margin: 0;
+    font-size: clamp(42px, 6vw, 70px);
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.contact-heading h2 span {
+    background: linear-gradient(
+        90deg,
+        #243eff,
+        #236cff,
+        #00d0ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;    
+    animation: textGlow 5s ease-in-out infinite;
+}
+
+.contact-heading p {
+    margin-top: 10px;
+
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8rem;
+
+    color: #777;
+}
+
+
+/* Main container */
+
+.contact-container {
+    position: relative;
+
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 60px;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.contact-info {
+    padding-top: 5px;
+}
+
+
+/* Availability */
+
+.availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(0, 255, 180, 0.05);
+    border: 1px solid rgba(0, 255, 180, 0.08);
+
+    color: #00dba0;
+
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.availability-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #00e6a3;
+
+    box-shadow: 0 0 10px #00e6a3;
+}
+
+
+/* Heading */
+
+.contact-info h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+    max-width: 400px;
+
+    color: #fff;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    line-height: 1.1;
+}
+
+.contact-info h3 span {
+    color: #30a5ff;
+}
+
+
+/* Description */
+
+.contact-description {
+    max-width: 430px;
+
+    color: #777;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 0.7rem;
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CONTACT ITEMS
+========================= */
+
+.contact-item {
+    width: 100%;
+    max-width: 430px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px;
+
+    margin-top: 10px;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+
+    border-color: rgba(48, 131, 255, 0.25);
+
+    background: rgba(48, 148, 255, 0.035);
+}
+
+
+/* Icon */
+
+.contact-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: rgba(48, 176, 255, 0.08);
+
+    color: #30bdff;
+
+    font-size: 15px;
+}
+
+
+/* Text */
+
+.contact-item small {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #666666;
+
+    font-size: 0.45rem;
+    letter-spacing: 0.7px;
+}
+
+.contact-item p {
+    margin: 0;
+
+    color: #ddd;
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form-wrapper {
+    position: relative;
+
+    padding: 22px 24px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 40, 90, 0.035)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Red/purple glow */
+
+.contact-form-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -50px;
+    right: -40px;
+
+    background: rgba(30, 146, 255, 0.08);
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+
+.contact-form-wrapper h3 {
+    position: relative;
+
+    margin: 0 0 20px;
+
+    color: #fff;
+
+    font-size: 0.9rem;
+
+    font-family: "Raleway", sans-serif;
+}
+
+
+/* Form row */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* Form group */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #666;
+
+    font-size: 0.45rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Inputs */
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 6px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    color: #fff;
+
+    outline: none;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 0.62rem;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.form-group textarea {
+    height: 100px;
+
+    resize: none;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #555;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border-color: rgba(18, 114, 178, 0.5);
+
+    box-shadow:
+        0 0 0 3px rgba(48, 162, 255, 0.05);
+}
+
+
+/* =========================
+   SEND BUTTON
+========================= */
+
+.send-btn {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+        90deg,
+        #243eff,
+        #236cff,
+        #00d0ff
+    );
+    color: #fff;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 0.55rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.send-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(48, 165, 255, 0.2);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+    position: relative;
+
+    background: #030506;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+
+    overflow: hidden;
+}
+
+
+/* Top glow */
+
+.footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+    left: 0;
+
+    width: 100%;
+    height: 130px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 220, 0.05),
+            transparent 35%,
+            rgba(160, 50, 255, 0.06)
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+.footer-container {
+
+    position: relative;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 55px 30px 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        0.7fr
+        0.9fr
+        1fr;
+
+    gap: 50px;
+
+    z-index: 1;
+}
+
+
+/* Footer brand */
+
+.footer-brand h2 {
+
+    margin: 0 0 12px;
+
+    color: #fff;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 1.4rem;
+}
+
+.footer-brand h2 span {
+    color: #30acff;
+}
+
+
+.footer-brand p {
+
+    max-width: 230px;
+
+    margin: 0;
+
+    color: #666;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 0.6rem;
+
+    line-height: 1.7;
+}
+
+
+/* Footer columns */
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.footer-column h4 {
+
+    margin: 0 0 8px;
+
+    color: #fff;
+
+    font-size: 0.5rem;
+
+    font-weight: 700;
+}
+
+
+.footer-column a,
+.footer-column p {
+
+    margin: 0;
+
+    color: #666;
+
+    text-decoration: none;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 0.5rem;
+
+    transition: color 0.3s ease;
+}
+
+
+.footer-column a:hover {
+    color: #308dff;
+}
+
+
+.footer-contact p {
+    margin-top: 3px;
+}
+
+
+/* Footer bottom */
+
+.footer-bottom {
+
+    position: relative;
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.025);
+
+    color: #444;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 0.45rem;
+
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .contact-section {
+        padding: 80px 6% 60px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .contact-info {
+        max-width: 600px;
+        margin: auto;
+        width: 100%;
+    }
+
+    .contact-form-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .contact-section {
+        padding: 70px 20px 50px;
+    }
+
+    .contact-heading {
+        margin-bottom: 35px;
+    }
+
+    .contact-heading h2 {
+        font-size: 2.2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .contact-form-wrapper {
+        padding: 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 40px 25px 30px;
+    }
+
+    .footer-brand p {
+        max-width: 300px;
+    }
+
+}
+
+
 /* =========================
    PROGRESS ANIMATION
 ========================= */
