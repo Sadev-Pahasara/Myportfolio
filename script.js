@@ -112,53 +112,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const navLinks = document.querySelectorAll(".nav-link");
 
-const sections = [
-    document.getElementById("top"),
-    document.getElementById("Portfolio"),
-    document.getElementById("About"),
-    document.getElementById("Services"),
-    document.getElementById("Skills"),
-    document.getElementById("Feedback"),
-    document.getElementById("Contact")
-].filter(Boolean);
+const sectionIds = [
+    "top",
+    "Portfolio",
+    "About",
+    "Services",
+    "Skills",
+    "Approach",
+    "Contact"
+];
+
+const sections = sectionIds
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
 
 
 function updateActiveNav() {
 
-    let current = "top";
+    const navHeight = 100;
+    const scrollPosition = window.scrollY + navHeight;
 
-    const scrollPosition = window.scrollY + 180;
+    let current = "top";
 
     sections.forEach(section => {
 
-        if (scrollPosition >= section.offsetTop) {
+        const sectionTop =
+            section.getBoundingClientRect().top + window.scrollY;
+
+        if (scrollPosition >= sectionTop) {
             current = section.id;
         }
 
     });
 
-
     navLinks.forEach(link => {
+
+        const href = link.getAttribute("href");
 
         link.classList.toggle(
             "active",
-            link.getAttribute("href") === `#${current}`
+            href === `#${current}`
         );
 
     });
 }
 
 
-// Update while scrolling
-window.addEventListener("scroll", updateActiveNav);
+window.addEventListener("scroll", updateActiveNav, {
+    passive: true
+});
 
-
-// IMPORTANT: update when page initially loads
 window.addEventListener("load", () => {
-
     updateActiveNav();
 
-    // Run again after loader/animations finish
     setTimeout(updateActiveNav, 500);
     setTimeout(updateActiveNav, 1000);
 });
