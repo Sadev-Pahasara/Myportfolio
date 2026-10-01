@@ -424,7 +424,7 @@ body.no-scroll {
   gap: 1.5rem;
 }
 
-/* overlay */
+
 .overlay {
   position: absolute;
   inset: 0;
@@ -455,7 +455,7 @@ body.no-scroll {
   color: black;
 }
 
-/* tech stack */
+
 .tech {
   display: flex;
   gap: 0.5rem;
@@ -757,9 +757,7 @@ body.menu-open .menu-backdrop {
   visibility: visible;
 }
 
-/* =========================
-   SERVICES SECTION
-========================= */
+
 
 .services {
   top: -10%;
@@ -799,9 +797,7 @@ body.menu-open .menu-backdrop {
 }
 
 
-/* =========================
-   HEADER
-========================= */
+
 
 .services-header {
     text-align: center;
@@ -838,50 +834,40 @@ body.menu-open .menu-backdrop {
 }
 
 
-/* =========================
-   SERVICES GRID
-========================= */
+
 
 .services-grid {
-    width: 100%;
-    max-width: 1550px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 10px;
-    gap: 2.5rem;
+  width: 100%;
+  max-width: 1550px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 10px;
+  gap: 2.5rem;
 }
 
 
-/* =========================
-   SERVICE CARD
-========================= */
+
 
 .service-card {
-    position: relative;
-    overflow: hidden;
-
-    padding: 2.5rem 2.5rem 2.2rem;
-
-    --mouse-x: 50%;
-    --mouse-y: 50%;
-    --service-color: #b84cff;
-
-    background: rgba(7, 7, 9, 0.45);
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 28px;
-
-    transition:
-        border-color 0.4s ease,
-        transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem 2.5rem 2.2rem;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --service-color: #b84cff;
+  background: rgba(7, 7, 9, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+  transition:
+    border-color 0.4s ease,
+    transform 0.4s ease;
 }
 
 
-/* MOUSE FOLLOW SPOTLIGHT */
+
 .service-card::before {
     content: "";
     position: absolute;
@@ -898,13 +884,13 @@ body.menu-open .menu-backdrop {
 }
 
 
-/* Show spotlight while hovering */
+
 .service-card:hover::before {
     opacity: 1;
 }
 
 
-/* Keep content above spotlight */
+
 .service-card > * {
     position: relative;
     z-index: 1;
@@ -934,9 +920,7 @@ body.menu-open .menu-backdrop {
     --service-color: #ffae00;
 }
 
-/* =========================
-   ICON
-========================= */
+
 
 .service-icon {
     width: 68px;
@@ -965,7 +949,7 @@ body.menu-open .menu-backdrop {
 }
 
 
-/* icon hover */
+
 
 .service-card:hover .service-icon {
     transform: translateY(-3px);
@@ -979,9 +963,7 @@ body.menu-open .menu-backdrop {
 }
 
 
-/* =========================
-   ICON COLORS
-========================= */
+
 
 .web-icon {
     border-color: #b54cff;
@@ -1128,8 +1110,6 @@ body.menu-open .menu-backdrop {
   z-index: 1;
 }
 
-
-/* GRID - TOP RIGHT */
 .Skills::before {
   content: "";
   position: absolute;
@@ -1146,8 +1126,6 @@ body.menu-open .menu-backdrop {
   z-index: -2;
 }
 
-
-/* SPOTLIGHT - SAME POSITION AS GRID */
 .Skills::after {
   content: "";
   position: absolute;
@@ -1230,10 +1208,6 @@ body.menu-open .menu-backdrop {
   margin-bottom: 40px;
 }
 
-/* ================================
-   SKILLS GRID — 4 × 2
-================================ */
-
 .skills-grid {
   width: 100%;
   max-width: 100%;
@@ -1242,11 +1216,6 @@ body.menu-open .menu-backdrop {
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
-
-
-/* ================================
-   SKILL CARD
-================================ */
 
 .skills-card {
   position: relative;
@@ -1275,11 +1244,6 @@ body.menu-open .menu-backdrop {
           transparent
         );
 }
-
-
-/* ================================
-   CIRCLE
-================================ */
 
 .progress-circle {
   width: 105px;
@@ -1323,10 +1287,6 @@ body.menu-open .menu-backdrop {
   color: #9b9ba5;
 }
 
-/* ================================
-   TEXT
-================================ */
-
 .skills-card h4 {
   margin: 0 0 8px;
   font-size: 17px;
@@ -1341,11 +1301,6 @@ body.menu-open .menu-backdrop {
   font-weight: 700;
 }
 
-
-/* ================================
-   TABLET
-================================ */
-
 @media (max-width: 1000px) {
 
     .skills-grid {
@@ -1354,11 +1309,6 @@ body.menu-open .menu-backdrop {
     }
 
 }
-
-
-/* ================================
-   MOBILE
-================================ */
 
 @media (max-width: 550px) {
 
@@ -1408,11 +1358,6 @@ body.menu-open .menu-backdrop {
     }
 }
 
-
-/* ================================
-   VERY SMALL MOBILE
-================================ */
-
 @media (max-width: 350px) {
 
     .skills-grid {
@@ -1430,11 +1375,6 @@ body.menu-open .menu-backdrop {
   width: 30%;
   font-family: 'Saira', sans-serif;
 }
-
-
-/* =========================
-   SKILL CARD SKILLS SECTION
-========================= */
 
 .skills-section {
   width: 100vw;
