@@ -12,8 +12,39 @@ document.addEventListener("DOMContentLoaded", () => {
   menuClose?.addEventListener("click", () => toggleMenu(false));
   menuBackdrop?.addEventListener("click", () => toggleMenu(false));
 
- 
+  if (window.AOS) {
+    AOS.init({
+      once: true,
+      offset: 80,
+      duration: 800,
+      easing: "ease-in-out",
+    });
+    setTimeout(() => AOS.refreshHard(), 600);
+  }
 });
+
+const initAOS = () => {
+  if (window.AOS) {
+    AOS.init({
+      once: true,
+      offset: 80,
+      duration: 800,
+      easing: "ease-in-out",
+    });
+    setTimeout(() => AOS.refreshHard(), 600);
+  }
+};
+
+const addDefaultAOSAttributes = () => {
+  document.querySelectorAll(".portfolio-card, .service-card, .skills-card, .school-card").forEach((element, index) => {
+    if (!element.hasAttribute("data-aos")) {
+      element.setAttribute("data-aos", index % 2 === 0 ? "zoom-in-up" : "fade-up");
+      element.setAttribute("data-aos-delay", `${(index + 1) * 100}`);
+    }
+  });
+};
+
+document.addEventListener("DOMContentLoaded", addDefaultAOSAttributes);
 
 // ================= LOADING ANIMATION =================
 gsap.fromTo(
@@ -30,19 +61,7 @@ gsap.fromTo(
       document.body.classList.add("loaded");
 
       // ================= AOS INIT (FIXED PROPERLY) =================
-      if (window.AOS) {
-        AOS.init({
-          once: true,
-          offset: 80,
-          duration: 800,
-          easing: "ease-in-out",
-        });
-
-        // IMPORTANT: wait for layout settle
-        setTimeout(() => {
-          AOS.refreshHard();
-        }, 600);
-      }
+      initAOS();
 
       // Play background video if exists
       const bgVideo = document.querySelector(".bg-video");
