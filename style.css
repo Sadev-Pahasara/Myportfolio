@@ -539,12 +539,12 @@ body.no-scroll {
 .sec31 img {
   margin-top: 1.5rem;
   width: 170%;
-  max-width: 500px;
+  max-width: 600px;
   margin-left: -90px;
   scale: 1.1;
 
-  -webkit-mask-image: url("src/mask20.png");
-  mask-image: url("src/mask20.png");
+  -webkit-mask-image: url("src/mask23.jpg");
+  mask-image: url("src/mask23.jpg");
 
   -webkit-mask-size: cover;
   mask-size: cover;
