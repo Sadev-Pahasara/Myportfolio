@@ -352,6 +352,21 @@ body.no-scroll {
     animation: textGlow 5s ease-in-out infinite;
     
     margin-top: -0.5rem;
+
+  -webkit-mask-image: url("src/mask23.jpg");
+  mask-image: url("src/mask23.jpg");
+
+  -webkit-mask-size: cover;
+  mask-size: cover;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-mode: luminance;
+  mask-mode: luminance;
 }
 
 
@@ -595,7 +610,7 @@ body.no-scroll {
 .corousel-track {
   display: flex;
   width: max-content;
-  gap: 20px;
+  gap: 10px;
   animation: scroll 30s linear infinite;
 }
 
@@ -638,7 +653,7 @@ body.no-scroll {
 
 .cards{
   flex: 0 0 auto;
-  width: 130px;
+  width: 120px;
   height: 100px;
   background-color: #ffffff00;
   display: flex;
@@ -669,7 +684,7 @@ body.no-scroll {
 .corousel2 {
   display: flex;
   width: max-content;
-  gap: 20px;
+  gap: 10px;
   animation: scroll2 30s linear infinite;
 }
 
@@ -804,6 +819,22 @@ body.menu-open .menu-backdrop {
     -webkit-text-fill-color: transparent;
     background-clip: text;    
     animation: textGlow 5s ease-in-out infinite;
+    
+    -webkit-mask-image: url("src/mask23.jpg");
+    mask-image: url("src/mask23.jpg");
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-mode: luminance;
+    mask-mode: luminance;
+    
 }
 
 .services-header p {
@@ -1161,6 +1192,21 @@ body.menu-open .menu-backdrop {
   -webkit-text-fill-color: transparent;
   background-clip: text;    
   animation: textGlow 5s ease-in-out infinite;
+
+  -webkit-mask-image: url("src/mask23.jpg");
+  mask-image: url("src/mask23.jpg");
+
+  -webkit-mask-size: cover;
+  mask-size: cover;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-mode: luminance;
+  mask-mode: luminance;
 }
 
 @keyframes textGlow {
@@ -1523,6 +1569,21 @@ body.menu-open .menu-backdrop {
   -webkit-text-fill-color: transparent;
   background-clip: text;    
   animation: textGlow 5s ease-in-out infinite;
+
+  -webkit-mask-image: url("src/mask23.jpg");
+  mask-image: url("src/mask23.jpg");
+
+  -webkit-mask-size: cover;
+  mask-size: cover;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-mode: luminance;
+  mask-mode: luminance;
 }
 
 
@@ -1805,6 +1866,21 @@ body.menu-open .menu-backdrop {
     -webkit-text-fill-color: transparent;
     background-clip: text;    
     animation: textGlow 5s ease-in-out infinite;
+
+    -webkit-mask-image: url("src/mask23.jpg");
+    mask-image: url("src/mask23.jpg");
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-mode: luminance;
+    mask-mode: luminance;
 }
 
 .contact-heading p {
@@ -2217,9 +2293,9 @@ body.menu-open .menu-backdrop {
   padding: 15px;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.025);
-  color: #444;
+  color: #717171;
   font-family: "Raleway", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
   letter-spacing: 0.5px;
 }
 
