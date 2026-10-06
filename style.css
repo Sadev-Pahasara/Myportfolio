@@ -569,41 +569,34 @@ body.no-scroll {
 }
 
 .corousel-container {
-  width: 100%;
+  width: 90%;
   overflow: hidden;
-  background-color: #ffffff00;
+  background-color: transparent;
   margin-top: 50px;
-}
+  margin-left: 5%;
 
-.card{
-  flex: 0 0 auto;
-  width: 100px;
-  height: 100px;
-  background-color: #ffffff00;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  border-radius: 20px;
-  margin: 0 10px;
-  font-size: 2.5rem;
-}
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
 
-.card img {
-  margin-top: -10px;
-  width: 40%;
-  align-items: center;
-  object-fit: cover;
-  filter: drop-shadow(0 10px 25px rgba(255, 255, 255, 0.471));
-  filter: grayscale(10%);
-  
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
 }
 
 .corousel-track {
   display: flex;
   width: max-content;
   gap: 20px;
-  animation: scroll 60s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {
@@ -615,15 +608,37 @@ body.no-scroll {
   }
 }
 
+.corousel-container:hover .corousel-track {
+  animation-play-state: paused;
+}
+
 .corousel-container2 {
-  width: 100%;
+  width: 90%;
   overflow: hidden;
-  background-color: #ffffff00;
+  background-color: transparent;
+  margin-top: -30px;
+  margin-left: 5%;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
 }
 
 .cards{
   flex: 0 0 auto;
-  width: 100px;
+  width: 130px;
   height: 100px;
   background-color: #ffffff00;
   display: flex;
@@ -632,12 +647,19 @@ body.no-scroll {
   font-weight: bold;
   border-radius: 20px;
   margin: 0 10px;
-  font-size: 2.5rem;
+}
+
+.cards p{
+  font-size: 1rem;
+  color: #8fb7bb;
+  margin-top: -10px;
+  margin-left: 10px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .cards img {
   margin-top: -10px;
-  width: 40%;
+  width: 15%;
   align-items: center;
   object-fit: cover;
   filter: drop-shadow(0 10px 25px rgba(255, 255, 255, 0.471));
@@ -648,7 +670,7 @@ body.no-scroll {
   display: flex;
   width: max-content;
   gap: 20px;
-  animation: scroll2 60s linear infinite;
+  animation: scroll2 30s linear infinite;
 }
 
 @keyframes scroll2 {
@@ -660,49 +682,8 @@ body.no-scroll {
   }
 }
 
-.schools{
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 3rem;
-  margin-left: 50px;
-  z-index: 8;
-  display: flex;
-  flex-direction: row;
-  gap: 8rem;
-}
-
-.schools img {
-  width: 450px;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 10px;
-  filter: drop-shadow(0 10px 25px rgba(255, 255, 255, 0));
-  
-  -webkit-mask-image: url("src/mask22.png");
-  mask-image: url("src/mask22.png");
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-mode: luminance;
-  mask-mode: luminance;
-}
-
-.school-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0.5rem;
-}
-
-.scldetails {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 15%;
-  justify-content: center;
+.corousel-container2:hover .corousel2 {
+  animation-play-state: paused;
 }
 
 .loaded .sec1 h1 {
