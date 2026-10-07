@@ -214,3 +214,42 @@ serviceCards.forEach(card => {
     });
 
 });
+
+//scroll
+
+/* =========================================
+   SMOOTH MOMENTUM SCROLL
+========================================= */
+
+const lenis = new Lenis({
+    duration: 1.4,
+
+    // Ease out slowly when fingers leave the touchpad
+    easing: (t) => 1 - Math.pow(1 - t, 4),
+
+    // Trackpad / mouse wheel
+    smoothWheel: true,
+
+    // Touch scrolling
+    smoothTouch: true,
+
+    // Slightly slower, smoother movement
+    wheelMultiplier: 0.8,
+
+    touchMultiplier: 1,
+
+    infinite: false
+});
+
+
+/* Animation loop */
+
+function smoothScroll(time) {
+
+    lenis.raf(time);
+
+    requestAnimationFrame(smoothScroll);
+
+}
+
+requestAnimationFrame(smoothScroll);

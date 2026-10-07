@@ -3,7 +3,19 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
 }
 
 body {
@@ -1422,7 +1434,7 @@ body.menu-open .menu-backdrop {
 .skill-card {
   margin-top: 10px;
   width: 100%;
-  min-height: 120px;
+  min-height: 50px;
   padding: 15px 20px;
   box-sizing: border-box;
   background: #050505;
@@ -1455,14 +1467,14 @@ body.menu-open .menu-backdrop {
 .skill-header h3 {
   margin: 0;
   color: white;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-family: 'Quicksand', sans-serif;
 }
 
 .skill-header span {
     color: #28edff;
 
-    font-size: 1.2rem;
+    font-size: 0.80rem;
     font-weight: bold;
 
     font-family: 'Quicksand', sans-serif;
@@ -1475,7 +1487,7 @@ body.menu-open .menu-backdrop {
 
 .progress-bar {
   width: 100%;
-  height: 15px;
+  height: 5px;
   background: #191a1c;
   border-radius: 50px;
   overflow: hidden;
