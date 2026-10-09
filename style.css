@@ -3,10 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
 }
 
 html.lenis,
@@ -2222,21 +2219,39 @@ body.menu-open .menu-backdrop {
 
 .footer-container {
   position: relative;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: auto;
   padding: 55px 30px 40px;
   display: grid;
-  grid-template-columns:
-        1.5fr
-        0.7fr
-        0.9fr
-        1fr;
-  gap: 50px;
+  grid-template-columns: 1.5fr 0.7fr 0.9fr 1fr 150px;
+  gap: 30px;
+  align-items: start;
   z-index: 1;
 }
 
+.footerimage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-/* Footer brand */
+.footerimage img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  animation: pop 2s ease-in-out infinite alternate;
+}
+
+@keyframes pop {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.05;
+  }
+}
 
 .footer-brand h2 {
   margin: 0 0 12px;
@@ -2296,7 +2311,6 @@ body.menu-open .menu-backdrop {
   margin-top: 3px;
 }
 
-
 /* Footer bottom */
 
 .footer-bottom {
@@ -2314,6 +2328,7 @@ body.menu-open .menu-backdrop {
 /* =========================
    RESPONSIVE
 ========================= */
+
 
 @media (max-width: 850px) {
 
