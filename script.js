@@ -284,3 +284,48 @@ function smoothScroll(time) {
 }
 
 requestAnimationFrame(smoothScroll);
+
+
+/* ================= DISABLE IMAGE DRAGGING ================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Disable dragging for all images
+    document.querySelectorAll("img").forEach((img) => {
+        img.setAttribute("draggable", "false");
+
+        img.addEventListener("dragstart", (event) => {
+            event.preventDefault();
+        });
+    });
+
+    // Also prevent dragging images added later
+    document.addEventListener("dragstart", (event) => {
+        if (event.target.closest("img")) {
+            event.preventDefault();
+        }
+    }, true);
+
+});
+
+
+// ================= DISABLE IMAGE SAVING =================
+
+document.addEventListener("contextmenu", function (event) {
+    if (event.target.closest("img")) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+}, true);
+
+// Prevent dragging images
+document.addEventListener("dragstart", function (event) {
+    if (event.target.closest("img")) {
+        event.preventDefault();
+    }
+}, true);
+
+// Disable image dragging
+document.querySelectorAll("img").forEach((img) => {
+    img.setAttribute("draggable", "false");
+});
