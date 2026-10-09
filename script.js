@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const revealTargets = document.querySelectorAll(
+    ".portfolio-header, .portfolio-card, .sec31, .services-header, .service-card, " +
+      ".skills-heading, .skills-subtitle, .skill-subtitles, .skills-card, .skill-card, " +
+      ".approach-heading, .approach-card, .contact-heading, .contact-info, " +
+      ".contact-form-wrapper, .footer-brand, .footer-column, .footerimage"
+  );
+
+  revealTargets.forEach((element) => element.classList.add("reveal"));
+
+  const revealElements = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    revealElements.forEach((element) => element.classList.add("is-visible"));
+  } else {
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+  }
+
   const menuButton = document.querySelector(".menu-button");
   const menuClose = document.querySelector(".mobile-menu-close");
   const menuBackdrop = document.getElementById("menuBackdrop");
@@ -37,7 +68,7 @@ const initAOS = () => {
 
 const addDefaultAOSAttributes = () => {
   document.querySelectorAll(".portfolio-card, .service-card, .skills-card, .school-card").forEach((element, index) => {
-    if (!element.hasAttribute("data-aos")) {
+    if (!element.hasAttribute("data-aos") && !element.classList.contains("reveal")) {
       element.setAttribute("data-aos", index % 2 === 0 ? "zoom-in-up" : "fade-up");
       element.setAttribute("data-aos-delay", `${(index + 1) * 100}`);
     }

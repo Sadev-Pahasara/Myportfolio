@@ -2842,6 +2842,40 @@ body.menu-open .menu-backdrop {
   transform: none !important;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footerimage.reveal {
+  transform: translateY(35px) scale(0.92);
+}
+
+.footerimage.reveal.is-visible {
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .footerimage.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .footerimage img {
+    animation: none;
+  }
+}
+
 /* Keyframes for nav animations */
 @keyframes fadeInRight {
   to {
