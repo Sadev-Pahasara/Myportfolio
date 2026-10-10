@@ -2947,6 +2947,13 @@ body.menu-open .menu-backdrop {
 }
 
 @media (max-width: 360px) and (max-height: 800px) and (orientation: portrait) {
+  .logo-name {
+    font-size: clamp(0.9rem, 5vw, 1.125rem);
+    letter-spacing: clamp(0.15rem, 1.5vw, 0.3rem);
+    margin-left: 0;
+    white-space: nowrap;
+  }
+
   .sec1 h1 {
     font-size: 1.75rem;
     margin-top: 140px;
