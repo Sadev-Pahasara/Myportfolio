@@ -2945,3 +2945,48 @@ body.menu-open .menu-backdrop {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 360px) and (max-height: 800px) and (orientation: portrait) {
+  .sec1 h1 {
+    font-size: 1.75rem;
+    margin-top: 140px;
+  }
+
+  .sec1 p {
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 0 0.75rem;
+  }
+
+  .fname {
+    letter-spacing: 0.5rem;
+    margin-left: 0;
+  }
+
+  .portfolio-grid {
+    margin-left: 0;
+  }
+
+  .portfolio-card {
+    width: 100%;
+  }
+
+  .sec3 p {
+    width: min(100%, 350px);
+  }
+
+  .sec3 img {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .schools img {
+    width: min(100%, 300px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .skills-section {
+    width: 100%;
+  }
+}
