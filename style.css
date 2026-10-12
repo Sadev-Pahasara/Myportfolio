@@ -159,6 +159,10 @@ body.no-scroll {
   left: 0;
   bottom: 0;
   width: min(320px, 85vw);
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: #2222229f;
   backdrop-filter: blur(8px);
   border: #161616 1px solid;
@@ -170,17 +174,18 @@ body.no-scroll {
   flex-direction: column;
   font-size: 1.25rem;
   font-family: "Raleway", sans-serif;
-  
 }
 
 .mobile-menu-logo{
-  scale: 0.2;
-  margin-top: -550px;
-  margin-left: -65%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 1rem;
   filter: drop-shadow(0 10px 25px rgba(10, 172, 222, 0.619));
 }
 
 .mobile-menu-logo img {
+  width: min(42vw, 140px);
+  height: auto;
   animation: blink 5.5s ease-in-out infinite;
 }
 
@@ -194,24 +199,26 @@ body.no-scroll {
 }
 
 .mobile-menu-header {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-top: -220px;
+  justify-content: flex-end;
+}
+
+.mobile-menu-header span {
+  display: none;
 }
 
 .mobile-menu-close {
+  display: flex;
+  padding: 0;
   background: transparent;
   border: none;
   color: #ffffff;
   font-size: 1.75rem;
   line-height: 1;
   cursor: pointer;
-  margin-top: -550px;
 }
 
 .mobile-menu-close img {
@@ -238,8 +245,8 @@ body.no-scroll {
 .mobile-menu-nav {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: -250px;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .mobile-menu-nav hr {
@@ -247,7 +254,7 @@ body.no-scroll {
   height: 2px;
   background: #ffffff;
   opacity: 0.5;
-  width: 95%;
+  width: 100%;
 }
 
 .mobile-menu-nav .nav-link {
