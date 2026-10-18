@@ -3415,11 +3415,6 @@ body.menu-open .menu-backdrop {
   margin-left: 0px;
 }
 
-[data-aos] {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(35px);
