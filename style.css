@@ -335,19 +335,19 @@ body.no-scroll {
 
   clip-path: inset(0 round 24px 24px 0 0);
   clip-path: polygon(
-  0% 3%, 18% 3%, 20% 0%, 80% 0%,
-  82% 3%, 100% 3%, 100% 85%,
+  0% 0.8%, 18% 0.8%, 20% 0%, 80% 0%,
+  82% 0.8%, 100% 0.8%, 100% 85%,
   100% 100%, 85% 100%, 15% 100%,
   0% 100%, 0% 85%
   );
 }
 
-.portfolio-header {
+.peditorial-header {
     text-align: center;
     margin-bottom: 5rem;
 }
 
-.portfolio-header h2 {
+.editorial-header h2 {
     margin: 0;
     font-size: clamp(3rem, 5vw, 4.5rem);
     font-weight: 800;
@@ -355,7 +355,8 @@ body.no-scroll {
     line-height: 1.1;
 }
 
-.portfolio-header h2 span {
+.editorial-header h2 span {
+
     background: linear-gradient(
         90deg,
         #243eff,
@@ -385,11 +386,6 @@ body.no-scroll {
   mask-mode: luminance;
 }
 
-
-/* ===============================
-   EDITORIAL PROJECT SHOWCASE
-================================ */
-
 .portfolio-section {
     width: 100%;
     padding: 110px 7%;
@@ -407,21 +403,6 @@ body.no-scroll {
     color: #76F4FF;
     font: 12px monospace;
     letter-spacing: 3px;
-}
-
-.editorial-header h2 {
-    margin: 25px 0;
-    font-size: clamp(42px, 6vw, 85px);
-    line-height: 1.06;
-    font-weight: 800;
-    letter-spacing: -3px;
-}
-
-.editorial-header h2 span {
-    color: transparent;
-    background: linear-gradient(100deg, #76F4FF, #b8a1ff);
-    -webkit-background-clip: text;
-    background-clip: text;
 }
 
 .editorial-header p {
@@ -770,13 +751,6 @@ body.no-scroll {
     line-height: 1.06;
     font-weight: 800;
     letter-spacing: -3px;
-}
-
-.editorial-header h2 span {
-    color: transparent;
-    background: linear-gradient(100deg, #76F4FF, #b8a1ff);
-    -webkit-background-clip: text;
-    background-clip: text;
 }
 
 .editorial-header p {
