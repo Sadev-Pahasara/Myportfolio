@@ -6,124 +6,226 @@
 
   ### Building digital experiences through code, creativity, and innovation.
 
-  [![Portfolio](https://img.shields.io/badge/Explore-My%20Portfolio-76F4FF?style=for-the-badge&logo=googlechrome&logoColor=black)](https://imashdilharsha.github.io/Portfolio/)
-  [![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github)](https://github.com/Sadev-Pahasara)
+  <a href="https://sadev-pahasara.github.io/Myportfolio/">
+    <img src="https://img.shields.io/badge/EXPLORE-MY%20PORTFOLIO-76F4FF?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Explore My Portfolio"/>
+  </a>
+  <a href="https://github.com/Sadev-Pahasara">
+    <img src="https://img.shields.io/badge/GITHUB-PROFILE-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"/>
+  </a>
 
 </div>
 
 ---
 
-## `01 — About the Project`
+## `01 — About Me`
 
-Welcome to my personal developer portfolio! This website showcases my technical skills, educational background, projects, and approach to software development.
+I'm Sadev Pahasara, a software developer passionate about building modern, responsive, and user-friendly digital experiences.
 
-Designed with a modern, dark aesthetic and interactive animations, the portfolio represents my passion for building responsive web applications, creating intuitive user interfaces, and developing innovative digital solutions.
+My interests include full-stack development, UI/UX design, application development, and exploring innovative technologies. I enjoy transforming ideas into functional applications through clean code, creative design, and continuous learning.
 
-My goal is to combine clean code, thoughtful design, and practical functionality to create meaningful digital experiences.
+I aim to develop software that combines functionality, performance, usability, and visual appeal.
 
-## `02 — Portfolio Sections`
+## `02 — About This Portfolio`
 
-- **Home** — Introduction and personal branding.
-- **Projects** — Selected software development and creative projects.
-- **About Me** — My background, interests, and development journey.
-- **Education** — Academic qualifications and ongoing studies.
-- **Services** — Software development and design services.
-- **Skills** — Technologies, tools, and technical competencies.
-- **Approach** — My development workflow and problem-solving mindset.
-- **Feedback** — Feedback and testimonials.
-- **Contact** — A way to connect with me about opportunities and collaborations.
+This portfolio is my personal digital space for presenting my skills, educational background, projects, and development journey.
 
-## `03 — Featured Projects`
+Designed with a modern dark aesthetic, cyan accents, interactive elements, and smooth animations, the website reflects my approach to contemporary web development and interface design.
 
-| Project | Description |
+### Key Features
+
+- Modern dark-themed user interface.
+- Responsive design for desktop, tablet, and mobile.
+- Smooth scrolling and scroll-triggered animations.
+- Interactive navigation and visual effects.
+- Project showcases featuring images and video demonstrations.
+- Education and technical skills sections.
+- Dedicated services, development approach, and feedback sections.
+- Contact section for professional opportunities and collaborations.
+
+## `03 — Portfolio Sections`
+
+| Section | Description |
 |---|---|
-| **Project ORION** | A personal AI assistant built with Python, designed to combine intelligent interactions with practical desktop functionality. |
-| **LuxeVista** | A hotel management and hospitality experience with a focus on modern design and application functionality. |
-| **SkillPro Institute** | A learning management platform designed to support educational activities and digital learning. |
-| **Cozy Comfort** | A blanket sales and inventory management system connecting manufacturers, distributors, sellers, and customers. |
-| **KMC Management System** | A management application designed to organize operational information and workflows. |
-| **Sagara Construction** | A construction company website focused on professional presentation and responsive design. |
+| **Home** | Introduction, personal branding, and hero animations. |
+| **Projects** | A showcase of selected development projects. |
+| **About** | Background, interests, and development journey. |
+| **Education** | Academic qualifications and studies. |
+| **Services** | Software development and design services. |
+| **Skills** | Programming languages, technologies, and tools. |
+| **Approach** | Development workflow and problem-solving methodology. |
+| **Feedback** | Testimonials and feedback. |
+| **Contact** | Professional inquiries and collaboration opportunities. |
 
-*Some projects may include demonstrations, screenshots, videos, or links to their respective repositories.*
+## `04 — Featured Projects`
 
-## `04 — Tech Stack`
+### 01. Project ORION — Personal AI Assistant
 
-### Languages
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![C%23](https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=csharp&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
+A Python-based personal AI assistant designed to bring intelligent interactions and practical desktop functionality together. The project explores assistant architecture, AI integration, local command execution, and the possibility of running local language models.
 
-### Frameworks, Databases & Tools
-![ASP.NET](https://img.shields.io/badge/ASP.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
+**Technologies:** Python, PySide6, Qt WebEngine, AI integration.
 
-### Animation & Interface Design
-- GSAP
-- AOS (Animate On Scroll)
-- Responsive web design
-- UI/UX design and prototyping
-- Interactive layouts and motion effects
+### 02. LuxeVista — Hospitality Application
 
-## `05 — Design & Development`
+A hospitality-focused application designed to provide a modern user experience through thoughtful interface design and application functionality.
 
-The portfolio focuses on:
+**Focus:** Application development, user experience, and hospitality workflows.
 
-- Responsive layouts for desktop, tablet, and mobile.
-- Smooth animations and scroll-triggered transitions.
-- Modern typography and a consistent visual identity.
-- Interactive navigation and project showcases.
-- Performance-conscious front-end development.
-- Accessible, maintainable, and structured code.
+### 03. SkillPro Institute — Learning Management Platform
 
-## `06 — Education`
+An educational platform designed to support digital learning and streamline learning-related activities through an organized interface.
 
-- **BSc in Software Engineering** — November 2026 *(planned commencement; update to reflect actual status)*.
-- **Higher National Diploma in Software Engineering** — ICBT Campus, 2024–2026.
-- **G.C.E. Advanced Level** — Mahanama Central College, Monaragala, 2023/2024.
+**Focus:** Web development, application functionality, and user interface design.
 
-## `07 — Run Locally`
+### 04. Cozy Comfort — Inventory & Order Management
 
-To explore or modify the portfolio on your computer:
+A database-driven management system connecting manufacturers, distributors, sellers, and customers. It supports inventory management, order processing, and stock replenishment workflows.
 
-1. Clone the repository:
+**Technologies:** C#, ASP.NET, .NET Framework, Entity Framework, SQL Server / LocalDB.
 
-   ```bash
-   git clone https://github.com/Sadev-Pahasara/Portfolio.git
-   ```
+### 05. KMC Management System
 
-2. Open the project directory:
+A management application developed to organize information and support operational workflows through a structured application interface.
 
-   ```bash
-   cd Portfolio
-   ```
+**Technologies:** ASP.NET Web Forms, C#, SQL Server.
 
-3. Open `index.html` in your browser, or launch the project using the Live Server extension in Visual Studio Code.
+### 06. Sagara Construction — Company Website
 
-*If your repository uses a different name or contains a build process, adjust these commands accordingly.*
+A company website created to present construction services, communicate business information, and deliver a professional, responsive browsing experience.
 
-## `08 — Deployment`
+**Focus:** Front-end development, responsive layouts, and business website design.
 
-The portfolio is intended to be hosted using GitHub Pages.
+> Visit the portfolio to explore project previews, screenshots, videos, and available demonstrations.
 
-**Live website:**  
-https://imashdilharsha.github.io/Portfolio/
+## `05 — Tech Stack`
 
-## `09 — Connect With Me`
+### Programming Languages
 
-I'm interested in software development, creative problem-solving, and opportunities to build useful digital products.
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++"/>
+  <img src="https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white" alt="C#"/>
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+</p>
+
+### Frameworks & Libraries
+
+<p>
+  <img src="https://img.shields.io/badge/ASP.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="ASP.NET"/>
+  <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=black" alt="GSAP"/>
+  <img src="https://img.shields.io/badge/AOS-76F4FF?style=for-the-badge&logoColor=black" alt="Animate On Scroll"/>
+  <img src="https://img.shields.io/badge/PySide6-41CD52?style=for-the-badge&logo=qt&logoColor=white" alt="PySide6"/>
+</p>
+
+### Databases
+
+<p>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/>
+  <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="Microsoft SQL Server"/>
+</p>
+
+### Development Tools
+
+<p>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  <img src="https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white" alt="Visual Studio"/>
+  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Visual Studio Code"/>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"/>
+  <img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino IDE"/>
+</p>
+
+## `06 — Design Philosophy`
+
+My development approach focuses on creating digital products that are both visually engaging and practically useful.
+
+- **User-focused design:** Prioritize usability and intuitive navigation.
+- **Responsive development:** Build interfaces that adapt to different screen sizes.
+- **Clean code:** Keep code structured, readable, and maintainable.
+- **Motion & interaction:** Use animation purposefully to improve the user experience.
+- **Continuous learning:** Explore technologies and improve through practical projects.
+
+## `07 — Education`
+
+### Higher National Diploma in Software Engineering
+**ICBT Campus** | 2024–2026
+
+Higher National Diploma studies in software engineering and computing.
+
+### BSc in Software Engineering
+**Planned commencement: November 2026**
+
+### G.C.E. Advanced Level
+**Mahanama Central College, Monaragala** | 2023/2024
+
+*Update the BSc entry when your enrolment status changes.*
+
+## `08 — Run the Portfolio Locally`
+
+You can clone the repository and explore the website on your own computer.
+
+### Prerequisites
+
+- Git
+- A modern web browser
+- Visual Studio Code (recommended)
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/Sadev-Pahasara/Myportfolio.git
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd Myportfolio
+```
+
+**3. Open the project**
+
+Open the folder in Visual Studio Code and launch `index.html` using the Live Server extension.
+
+If your repository has a different name, replace `Myportfolio` in the commands with the actual repository name.
+
+## `09 — Live Deployment`
+
+The portfolio is published using GitHub Pages.
 
 <div align="center">
 
-  [![GitHub](https://img.shields.io/badge/GitHub-Sadev--Pahasara-181717?style=for-the-badge&logo=github)](https://github.com/Sadev-Pahasara)
-  [![Portfolio](https://img.shields.io/badge/Website-Portfolio-76F4FF?style=for-the-badge&logo=googlechrome&logoColor=black)](https://imashdilharsha.github.io/Portfolio/)
+  <a href="https://sadev-pahasara.github.io/Myportfolio/">
+    <img src="https://img.shields.io/badge/VISIT-LIVE%20PORTFOLIO-76F4FF?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Visit Live Portfolio"/>
+  </a>
+
+  **Website:** https://sadev-pahasara.github.io/Myportfolio/
+
+  **GitHub Profile:** https://github.com/Sadev-Pahasara
+
+  **Repository:** https://github.com/Sadev-Pahasara/Myportfolio
+
+</div>
+
+## `10 — Let's Connect`
+
+I'm always interested in learning, building meaningful software, exploring new technologies, and collaborating on creative projects.
+
+If you'd like to discuss a project, share an opportunity, or connect about software development, feel free to visit my portfolio or GitHub profile.
+
+<div align="center">
+
+  <a href="https://sadev-pahasara.github.io/Myportfolio/">
+    <img src="https://img.shields.io/badge/Portfolio-76F4FF?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Portfolio"/>
+  </a>
+  <a href="https://github.com/Sadev-Pahasara">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
 
 </div>
 
@@ -131,10 +233,18 @@ I'm interested in software development, creative problem-solving, and opportunit
 
 <div align="center">
 
-  **Designed & Developed by Sadev Pahasara**
+  ### SADEV PAHASARA
+
+  **Full Stack Developer · UI/UX Designer · Game Developer**
 
   *Turning ideas into digital experiences, one line of code at a time.*
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:76F4FF,50:101010,100:050505&height=100&section=footer" width="100%" alt="Footer Banner"/>
+  <a href="https://sadev-pahasara.github.io/Myportfolio/">
+    Visit My Portfolio
+  </a>
+
+  <br/><br/>
+
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:76F4FF,50:101010,100:050505&height=100&section=footer" width="100%" alt="Portfolio Footer Banner"/>
 
 </div>
