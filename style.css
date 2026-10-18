@@ -3093,8 +3093,8 @@ body.menu-open .menu-backdrop {
 
   .portfolio-section{
     clip-path: polygon(
-      0% 0.5%, 65% 0.5%, 20% 0%, 80% 0%,
-      85% 0.5%, 100% 0.5%, 100% 85%,
+      0% 0.7%, 15% 0.7%, 20% 0%, 80% 0%,
+      85% 0.7%, 100% 0.7%, 100% 85%,
       100% 100%, 85% 100%, 15% 100%,
       0% 100%, 0% 85%
     );
@@ -3544,5 +3544,13 @@ body.menu-open .menu-backdrop {
 
   .skills-section {
     width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio-section .editorial-header[data-aos],
+  .portfolio-section .editorial-project[data-aos] {
+    opacity: 1;
+    transform: none;
   }
 }
