@@ -450,12 +450,6 @@ body.no-scroll {
     min-width: 0;
 }
 
-.editorial-project[data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible;
-}
-
 .editorial-project.reverse {
     grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
 }
@@ -677,8 +671,8 @@ body.no-scroll {
     }
 
     .editorial-header h2 {
-        font-size: clamp(38px, 10vw, 56px);
-        letter-spacing: -1.8px;
+        font-size: clamp(1.75rem, 8.5vw, 3.5rem);
+        letter-spacing: -0.045em;
     }
 
     .editorial-header p {
@@ -1032,8 +1026,8 @@ body.no-scroll {
     }
 
     .editorial-header h2 {
-        font-size: clamp(38px, 10vw, 56px);
-        letter-spacing: -1.8px;
+        font-size: clamp(1.75rem, 8.5vw, 3.5rem);
+        letter-spacing: -0.045em;
     }
 
     .editorial-header p {
@@ -3125,7 +3119,7 @@ body.menu-open .menu-backdrop {
 
   .portfolio-section{
     clip-path: polygon(
-      0% 0.5%, 15% 0.5%, 20% 0%, 80% 0%,
+      0% 0.5%, 65% 0.5%, 20% 0%, 80% 0%,
       85% 0.5%, 100% 0.5%, 100% 85%,
       100% 100%, 85% 100%, 15% 100%,
       0% 100%, 0% 85%
