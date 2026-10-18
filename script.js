@@ -329,3 +329,4 @@ document.addEventListener("dragstart", function (event) {
 document.querySelectorAll("img").forEach((img) => {
     img.setAttribute("draggable", "false");
 });
+
