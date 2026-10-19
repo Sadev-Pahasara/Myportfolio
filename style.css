@@ -1315,8 +1315,8 @@ body.no-scroll {
 .education-card {
     position: relative;
     width: calc(50% - 55px);
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
 }
 
 .education-card:nth-of-type(odd) {

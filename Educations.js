@@ -1,163 +1,133 @@
 
-/* =========================================
-   EDUCATION — GSAP SCROLL ANIMATIONS
-========================================= */
+/* ==========================================
+   EDUCATION — MOBILE-FRIENDLY GSAP
+========================================== */
 
 (() => {
     function initEducationAnimations() {
         const section = document.querySelector(".education-section");
 
         if (!section || !window.gsap || !window.ScrollTrigger) {
+            // Keep the content visible if GSAP fails to load.
+            if (section) {
+                section.querySelectorAll(".education-card").forEach(card => {
+                    card.style.opacity = "1";
+                    card.style.visibility = "visible";
+                    card.style.transform = "none";
+                });
+            }
             return;
         }
 
         const gsap = window.gsap;
-        gsap.registerPlugin(window.ScrollTrigger);
+        const ScrollTrigger = window.ScrollTrigger;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const cards = gsap.utils.toArray(
+            section.querySelectorAll(".education-card")
+        );
 
         const header = section.querySelector(".education-header");
-        const cards = section.querySelectorAll(".education-card");
         const progress = section.querySelector(".timeline-progress");
-        const nodes = section.querySelectorAll(".timeline-node");
+        const footer = section.querySelector(".education-bottom");
 
-        // Respect reduced-motion accessibility preferences.
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            gsap.set([header, ...cards], {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        // Never leave content hidden when motion is reduced.
+        if (reduceMotion) {
+            gsap.set([header, ...cards, footer].filter(Boolean), {
                 autoAlpha: 1,
                 clearProps: "transform"
             });
 
-            if (progress) {
-                gsap.set(progress, { height: "100%" });
-            }
-
+            if (progress) gsap.set(progress, { height: "100%" });
             return;
         }
 
-        // HEADER REVEAL
+        // Make sure the section starts in a predictable state.
+        gsap.set([header, ...cards, footer].filter(Boolean), {
+            autoAlpha: 1
+        });
+
+        // HEADER — short reveal.
         if (header) {
-            gsap.fromTo(
-                header,
-                {
-                    autoAlpha: 0,
-                    y: 45
-                },
-                {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: header,
-                        start: "top 85%",
-                        once: true
-                    }
+            gsap.from(header, {
+                y: 20,
+                autoAlpha: 0,
+                duration: 0.55,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: header,
+                    start: "top 95%",
+                    toggleActions: "play none none none",
+                    once: true
                 }
-            );
+            });
         }
 
-        // TIMELINE GLOW PROGRESS
+        // CARDS — reveal as each card approaches the viewport.
+        cards.forEach((card, index) => {
+            gsap.from(card, {
+                y: isMobile ? 22 : 35,
+                x: isMobile ? 0 : (index % 2 === 0 ? -25 : 25),
+                autoAlpha: 0,
+                duration: isMobile ? 0.45 : 0.7,
+                delay: isMobile ? 0 : index * 0.04,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: card,
+                    start: isMobile ? "top 98%" : "top 88%",
+                    toggleActions: "play none none none",
+                    once: true
+                }
+            });
+        });
+
+        // TIMELINE — retain the scroll-linked glow.
         if (progress) {
             gsap.fromTo(
                 progress,
-                {
-                    height: "0%"
-                },
+                { height: "0%" },
                 {
                     height: "100%",
                     ease: "none",
                     scrollTrigger: {
                         trigger: section.querySelector(".education-timeline"),
-                        start: "top 65%",
-                        end: "bottom 65%",
-                        scrub: 0.8
+                        start: "top 85%",
+                        end: "bottom 75%",
+                        scrub: isMobile ? 0.2 : 0.6
                     }
                 }
             );
         }
 
-        // INDIVIDUAL QUALIFICATION REVEALS
-        cards.forEach((card, index) => {
-            const isMobile = window.matchMedia("(max-width: 768px)").matches;
-            const fromX = isMobile ? 0 : (index % 2 === 0 ? -55 : 55);
-
-            gsap.fromTo(
-                card,
-                {
-                    autoAlpha: 0,
-                    x: fromX,
-                    y: 35
-                },
-                {
-                    autoAlpha: 1,
-                    x: 0,
-                    y: 0,
-                    duration: 0.9,
-                    delay: 0.05,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 84%",
-                        once: true
-                    }
-                }
-            );
-        });
-
-        // TIMELINE NODE GLOW
-        nodes.forEach((node) => {
-            ScrollTrigger.create({
-                trigger: node.closest(".education-card"),
-                start: "top 75%",
-                once: true,
-                onEnter: () => {
-                    gsap.to(node, {
-                        scale: 1.35,
-                        duration: 0.3,
-                        ease: "back.out(2)",
-                        yoyo: true,
-                        repeat: 1
-                    });
-
-                    gsap.to(node, {
-                        boxShadow: "0 0 22px rgba(118, 244, 255, 0.7)",
-                        borderColor: "#76F4FF",
-                        duration: 0.4
-                    });
+        // FOOTER — subtle reveal.
+        if (footer) {
+            gsap.from(footer, {
+                y: 15,
+                autoAlpha: 0,
+                duration: 0.5,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: footer,
+                    start: "top 98%",
+                    once: true
                 }
             });
-        });
-
-        // BOTTOM STATEMENT
-        const footer = section.querySelector(".education-bottom");
-
-        if (footer) {
-            gsap.fromTo(
-                footer,
-                {
-                    autoAlpha: 0,
-                    y: 20
-                },
-                {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 0.8,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: footer,
-                        start: "top 95%",
-                        once: true
-                    }
-                }
-            );
         }
 
-        // Refresh measurements after the page loads.
+        // Recalculate after images, fonts and layout settle.
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+
         window.addEventListener("load", () => {
             ScrollTrigger.refresh();
         }, { once: true });
     }
 
-    // Wait for GSAP if your existing scripts load it first.
     if (document.readyState === "loading") {
         document.addEventListener(
             "DOMContentLoaded",
