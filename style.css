@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
 }
 
+html {
+    min-height: 100%;
+}
+
 html.lenis,
 html.lenis body {
     height: auto;
@@ -16,8 +20,21 @@ html.lenis body {
 }
 
 body {
-  height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
   cursor: url("src/cursor3.png"), auto;
+}
+
+section {
+    scroll-margin-top: 0;
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+    body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 }
 
 body::-webkit-scrollbar {
