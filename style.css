@@ -4144,6 +4144,17 @@ body.menu-open .menu-backdrop {
 }
 
 @media (max-width: 900px) {
+  .sec1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .portfolio-section {
+    margin-top: calc(100dvh - 31px);
+  }
+
   .portfolio-section .editorial-header[data-aos],
   .portfolio-section .editorial-project[data-aos] {
     opacity: 1;
