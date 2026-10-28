@@ -1,4 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm");
+  contactForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = String(formData.get("name") ?? "");
+    const email = String(formData.get("email") ?? "");
+    const subject = String(formData.get("subject") ?? "");
+    const message = String(formData.get("message") ?? "");
+    const body = `Name: ${name}\r\nEmail: ${email}\r\n\r\n${message}`;
+    const mailto = new URL("mailto:sadevpahasara49@gmail.com");
+
+    mailto.searchParams.set("subject", subject);
+    mailto.searchParams.set("body", body);
+    window.location.href = mailto.toString();
+  });
+
   const revealTargets = document.querySelectorAll(
     ".portfolio-header, .portfolio-card, .sec31, .services-header, .service-card, " +
       ".skills-heading, .skills-subtitle, .skill-subtitles, .skills-card, .skill-card, " +
@@ -329,4 +346,3 @@ document.addEventListener("dragstart", function (event) {
 document.querySelectorAll("img").forEach((img) => {
     img.setAttribute("draggable", "false");
 });
-
