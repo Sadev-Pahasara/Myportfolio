@@ -3126,10 +3126,35 @@ body.menu-open .menu-backdrop {
   margin-bottom: 25px;
 }
 
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 12px 18px;
+  border-radius: 6px;
+  border: 2px solid #060b35ba;
+  background: #02303b47;
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* =========================
-   CONTACT ITEMS
-========================= */
+.cv-download-btn i {
+  font-size: 0.9rem;
+  color: #add8f3;
+}
+
+.cv-download-btn:hover {
+  border: 2px solid #243eff;
+  background: linear-gradient(90deg, #243eff5b, #236cff5b, #00d0ff5b);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(48, 165, 255, 0.2);
+}
 
 .contact-item {
   width: 100%;
