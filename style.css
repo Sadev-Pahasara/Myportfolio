@@ -4186,3 +4186,13 @@ body.menu-open .menu-backdrop {
     transform: none;
   }
 }
+
+.editorial-project,
+.editorial-project.reverse {
+  zoom: 0.9;
+}
+
+.editorial-media {
+  width: 90%;
+  align-self: center;
+}
