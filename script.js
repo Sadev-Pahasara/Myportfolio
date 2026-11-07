@@ -47,6 +47,25 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => observer.observe(element));
   }
 
+  const progressBars = document.querySelectorAll(".progress-bar");
+  if (!("IntersectionObserver" in window)) {
+    progressBars.forEach((bar) => bar.classList.add("is-visible"));
+  } else {
+    const progressObserver = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    progressBars.forEach((bar) => progressObserver.observe(bar));
+  }
+
   const menuButton = document.querySelector(".menu-button");
   const menuClose = document.querySelector(".mobile-menu-close");
   const menuBackdrop = document.getElementById("menuBackdrop");
