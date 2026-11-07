@@ -278,8 +278,8 @@ const lenis = new Lenis({
     // Trackpad / mouse wheel
     smoothWheel: true,
 
-    // Touch scrolling
-    smoothTouch: true,
+    // Keep touch scrolling smooth on mobile devices
+    syncTouch: true,
 
     // Slightly slower, smoother movement
     wheelMultiplier: 0.8,
