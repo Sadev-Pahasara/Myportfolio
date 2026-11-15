@@ -23,7 +23,7 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     margin: 0;
-  cursor: url("src/cursor3.png"), auto;
+  cursor:url("src/cursor3.png"), auto;
 }
 
 section {
@@ -4238,4 +4238,57 @@ html.boot-pending .loading-page,
 .editorial-media {
   width: 90%;
   align-self: center;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    position: fixed;
+    top: var(--cursor-y, -100px);
+    left: var(--cursor-x, -100px);
+    z-index: 2147483647;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition:
+      opacity 180ms ease,
+      box-shadow 220ms ease,
+      width 220ms ease,
+      height 220ms ease;
+  }
+
+  .custom-cursor-dot.is-visible,
+  .custom-cursor-ring.is-visible {
+    opacity: 1;
+  }
+
+  .custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #20d6d0;
+  }
+
+  .custom-cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid #20d6d0;
+    border-radius: 50%;
+  }
+
+  .custom-cursor-ring.is-hovering:not(.is-pressed) {
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 0 12px rgb(32 214 208 / 22%);
+  }
+
+  .custom-cursor-dot.is-pressed {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-cursor-ring.is-pressed {
+    width: 33px;
+    height: 33px;
+  }
 }

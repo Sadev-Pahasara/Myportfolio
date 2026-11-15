@@ -1,4 +1,100 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const cursorMedia = window.matchMedia(
+    "(hover: hover) and (pointer: fine) and (min-width: 768px) and (prefers-reduced-motion: no-preference)"
+  );
+
+  if (cursorMedia.matches) {
+    const cursorDot = document.createElement("div");
+    const cursorRing = document.createElement("div");
+    cursorDot.className = "custom-cursor-dot";
+    cursorRing.className = "custom-cursor-ring";
+    cursorDot.setAttribute("aria-hidden", "true");
+    cursorRing.setAttribute("aria-hidden", "true");
+    document.body.append(cursorRing, cursorDot);
+
+    let pointerX = 0;
+    let pointerY = 0;
+    let ringX = 0;
+    let ringY = 0;
+    let lastFrameTime = 0;
+    let animationFrame = 0;
+    let hasPointerPosition = false;
+
+    const setInteractiveState = (target) => {
+      const isInteractive =
+        target instanceof Element &&
+        target.closest(
+          "a, button, [role='button'], input, select, textarea, summary, [data-cursor-hover]"
+        );
+      cursorRing.classList.toggle("is-hovering", Boolean(isInteractive));
+    };
+
+    const animateCursor = (time) => {
+      const easing = 1 - Math.exp(-Math.min(time - lastFrameTime || 16, 32) / 70);
+      lastFrameTime = time;
+      ringX += (pointerX - ringX) * easing;
+      ringY += (pointerY - ringY) * easing;
+
+      cursorDot.style.setProperty("--cursor-x", `${pointerX}px`);
+      cursorDot.style.setProperty("--cursor-y", `${pointerY}px`);
+      cursorRing.style.setProperty("--cursor-x", `${ringX}px`);
+      cursorRing.style.setProperty("--cursor-y", `${ringY}px`);
+
+      if (Math.abs(pointerX - ringX) < 0.1 && Math.abs(pointerY - ringY) < 0.1) {
+        ringX = pointerX;
+        ringY = pointerY;
+        cursorRing.style.setProperty("--cursor-x", `${ringX}px`);
+        cursorRing.style.setProperty("--cursor-y", `${ringY}px`);
+        animationFrame = 0;
+        return;
+      }
+
+      animationFrame = window.requestAnimationFrame(animateCursor);
+    };
+
+    const showCursor = (event) => {
+      if (event.pointerType && event.pointerType !== "mouse") return;
+
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+
+      if (!hasPointerPosition) {
+        ringX = pointerX;
+        ringY = pointerY;
+        hasPointerPosition = true;
+      }
+
+      cursorDot.classList.add("is-visible");
+      cursorRing.classList.add("is-visible");
+      setInteractiveState(event.target);
+
+      if (!animationFrame) {
+        lastFrameTime = 0;
+        animationFrame = window.requestAnimationFrame(animateCursor);
+      }
+    };
+
+    const hideCursor = () => {
+      cursorDot.classList.remove("is-visible", "is-pressed");
+      cursorRing.classList.remove("is-visible", "is-hovering", "is-pressed");
+      hasPointerPosition = false;
+    };
+
+    document.addEventListener("pointermove", showCursor);
+    document.addEventListener("pointerdown", (event) => {
+      if (!event.pointerType || event.pointerType === "mouse") {
+        cursorDot.classList.add("is-pressed");
+        cursorRing.classList.add("is-pressed");
+      }
+    });
+    document.addEventListener("pointerup", () => {
+      cursorDot.classList.remove("is-pressed");
+      cursorRing.classList.remove("is-pressed");
+    });
+    window.addEventListener("pointerleave", hideCursor);
+    window.addEventListener("blur", hideCursor);
+  }
+
   const contactForm = document.getElementById("contactForm");
   contactForm?.addEventListener("submit", (event) => {
     event.preventDefault();
