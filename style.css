@@ -3970,7 +3970,8 @@ body.menu-open .menu-backdrop {
   overflow: hidden;
   background: #000000;
   color: #d1d1d1;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Doto", Courier, monospace;
+  font-style: bold;
   opacity: 1;
   transition: opacity 900ms ease;
 }
