@@ -113,46 +113,132 @@ const addDefaultAOSAttributes = () => {
 
 document.addEventListener("DOMContentLoaded", addDefaultAOSAttributes);
 
-// ================= LOADING ANIMATION =================
-gsap.fromTo(
-  ".loading-page",
-  { opacity: 1 },
-  {
-    opacity: 0,
-    display: "none",
-    duration: 2,
-    delay: 3.5,
-    onComplete: () => {
+let lenisInstance = null;
 
-      document.body.classList.remove("no-scroll");
-      document.body.classList.add("loaded");
+// ================= TERMINAL BOOT SEQUENCE =================
+(() => {
+  const overlay = document.querySelector(".loading-page");
+  const output = document.getElementById("terminalOutput");
+  const root = document.documentElement;
+  const shouldRun = root.classList.contains("boot-pending");
+  const reducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const lines = [
+    "INITIALIZING SADEV.SYSTEM...",
+    "LOADING DEVELOPER PROFILE...",
+    "MOUNTING CREATIVE ENVIRONMENT...",
+    "COMPILING DIGITAL EXPERIENCES...",
+    "CHECKING SYSTEM INTEGRITY... OK",
+    "ESTABLISHING CONNECTION...",
+    "PORTFOLIO ENVIRONMENT READY",
+    "ACCESS GRANTED // WELCOME",
+  ];
+  let completed = false;
+  let watchdogId;
 
-      // ================= AOS INIT (FIXED PROPERLY) =================
+  const wait = (milliseconds) =>
+    new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+
+  const revealPage = () => {
+    overlay?.remove();
+    root.classList.remove("boot-pending");
+    document.body.classList.remove("no-scroll");
+    document.body.classList.add("loaded");
+    lenisInstance?.start();
+
+    try {
       initAOS();
+    } catch (error) {
+      console.error("Could not refresh page animations after the boot sequence.", error);
+    }
 
-      // Play background video if exists
-      const bgVideo = document.querySelector(".bg-video");
-      if (bgVideo) {
-        bgVideo.play().catch(() => {});
+    const bgVideo = document.querySelector(".bg-video");
+    if (bgVideo) {
+      bgVideo.play().catch(() => {});
+    }
+  };
+
+  const finishLoading = () => {
+    if (completed) {
+      return;
+    }
+
+    completed = true;
+    window.clearTimeout(watchdogId);
+
+    if (shouldRun && overlay) {
+      overlay.classList.add("is-closing");
+      window.setTimeout(revealPage, reducedMotion ? 180 : 950);
+    } else {
+      revealPage();
+    }
+  };
+
+  const runSequence = async () => {
+    if (!shouldRun || !overlay) {
+      finishLoading();
+      return;
+    }
+
+    watchdogId = window.setTimeout(finishLoading, 15000);
+
+    try {
+      if (!output) {
+        throw new Error("Terminal output element is missing.");
       }
-    },
-  }
-);
 
-// ================= LOGO ANIMATION =================
-gsap.fromTo(
-  ".logo-name",
-  {
-    y: 50,
-    opacity: 0,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    duration: 3,
-    delay: 1,
+      const cursor = document.createElement("span");
+      cursor.className = "terminal-cursor";
+      cursor.setAttribute("aria-hidden", "true");
+
+      const cursorRow = document.createElement("div");
+      cursorRow.className = "terminal-cursor-row";
+      cursorRow.appendChild(cursor);
+
+      for (let index = 0; index < lines.length; index += 1) {
+        const row = document.createElement("div");
+        row.className = "terminal-line";
+
+        const number = document.createElement("span");
+        number.className = "terminal-number";
+        number.textContent = `>${String(index + 1).padStart(2, "0")}`;
+
+        const message = document.createElement("span");
+        message.className = "terminal-message";
+        row.append(number, message);
+        output.appendChild(row);
+        output.appendChild(cursorRow);
+
+        if (reducedMotion) {
+          message.textContent = lines[index];
+        } else {
+          let typedMessage = "";
+          for (const character of lines[index]) {
+            typedMessage += character;
+            message.textContent = typedMessage;
+            await wait(24);
+          }
+
+          if (index < lines.length - 1) {
+            await wait(180);
+          }
+        }
+      }
+
+      await wait(reducedMotion ? 0 : 900);
+      finishLoading();
+    } catch (error) {
+      console.error("Terminal boot sequence failed; revealing the portfolio.", error);
+      finishLoading();
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runSequence, { once: true });
+  } else {
+    runSequence();
   }
-);
+})();
 
 // ================= SAFETY: AOS REFRESH ON RESIZE =================
 window.addEventListener("resize", () => {
@@ -288,38 +374,40 @@ serviceCards.forEach(card => {
    SMOOTH MOMENTUM SCROLL
 ========================================= */
 
-const lenis = new Lenis({
-    duration: 1.4,
+if (typeof Lenis !== "undefined") {
+    lenisInstance = new Lenis({
+        duration: 1.4,
 
-    // Ease out slowly when fingers leave the touchpad
-    easing: (t) => 1 - Math.pow(1 - t, 4),
+        // Ease out slowly when fingers leave the touchpad
+        easing: (t) => 1 - Math.pow(1 - t, 4),
 
-    // Trackpad / mouse wheel
-    smoothWheel: true,
+        // Trackpad / mouse wheel
+        smoothWheel: true,
 
-    // Keep touch scrolling smooth on mobile devices
-    syncTouch: true,
+        // Keep touch scrolling smooth on mobile devices
+        syncTouch: true,
 
-    // Slightly slower, smoother movement
-    wheelMultiplier: 0.8,
+        // Slightly slower, smoother movement
+        wheelMultiplier: 0.8,
 
-    touchMultiplier: 1,
+        touchMultiplier: 1,
 
-    infinite: false
-});
+        infinite: false
+    });
 
+    if (document.documentElement.classList.contains("boot-pending")) {
+        lenisInstance.stop();
+    }
 
-/* Animation loop */
-
-function smoothScroll(time) {
-
-    lenis.raf(time);
+    function smoothScroll(time) {
+        lenisInstance.raf(time);
+        requestAnimationFrame(smoothScroll);
+    }
 
     requestAnimationFrame(smoothScroll);
-
+} else {
+    console.error("Lenis did not load; using native scrolling.");
 }
-
-requestAnimationFrame(smoothScroll);
 
 
 /* ================= DISABLE IMAGE DRAGGING ================= */
