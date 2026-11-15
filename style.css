@@ -4026,7 +4026,7 @@ html.boot-pending .loading-page,
   display: block;
   width: 8px;
   height: 1px;
-  background: #e5484d;
+  background: #2fbfeb;
   animation: terminal-cursor-blink 1s steps(2, start) infinite;
 }
 
