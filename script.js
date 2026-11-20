@@ -143,6 +143,48 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => observer.observe(element));
   }
 
+  const footerBrand = document.querySelector(".footer-brand");
+  const footerImageStack = footerBrand?.querySelector(".footer-brand-image-stack");
+  const revealImage = footerImageStack?.querySelector(".footer-brand-image-reveal");
+  const supportsImageMask =
+    typeof CSS !== "undefined" &&
+    (CSS.supports("mask-image", "radial-gradient(circle, #000, transparent)") ||
+      CSS.supports("-webkit-mask-image", "radial-gradient(circle, #000, transparent)"));
+
+  if (cursorMedia.matches && footerBrand && footerImageStack && revealImage && supportsImageMask) {
+    let pointerX = 0;
+    let pointerY = 0;
+    let revealFrame = 0;
+
+    const renderReveal = () => {
+      revealImage.style.setProperty("--reveal-x", `${pointerX}px`);
+      revealImage.style.setProperty("--reveal-y", `${pointerY}px`);
+      revealImage.classList.add("is-active");
+      revealFrame = 0;
+    };
+
+    footerBrand.addEventListener("pointermove", (event) => {
+      if (event.pointerType !== "mouse") return;
+
+      const bounds = footerImageStack.getBoundingClientRect();
+      pointerX = event.clientX - bounds.left;
+      pointerY = event.clientY - bounds.top;
+
+      if (!revealFrame) {
+        revealFrame = window.requestAnimationFrame(renderReveal);
+      }
+    });
+
+    footerBrand.addEventListener("pointerleave", () => {
+      if (revealFrame) {
+        window.cancelAnimationFrame(revealFrame);
+        revealFrame = 0;
+      }
+
+      revealImage.classList.remove("is-active");
+    });
+  }
+
   const progressBars = document.querySelectorAll(".progress-bar");
   if (!("IntersectionObserver" in window)) {
     progressBars.forEach((bar) => bar.classList.add("is-visible"));

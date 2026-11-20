@@ -23,7 +23,7 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     margin: 0;
-  cursor:url("src/Ecore.png"), auto;
+  cursor:url("src/cursor3.png"), auto;
 }
 
 section {
@@ -3462,6 +3462,48 @@ body.menu-open .menu-backdrop {
 }
 
 
+.footer-brand-image-stack {
+  position: relative;
+  width: 40%;
+  aspect-ratio: 1;
+  margin-top: 10px;
+}
+
+.footer-brand-image-stack img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-brand-image-reveal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .footer-brand-image-reveal {
+    transition: opacity 180ms ease;
+    -webkit-mask-image: radial-gradient(
+      circle 110px at var(--reveal-x, -1000px) var(--reveal-y, -1000px),
+      #000 0 82px,
+      transparent 110px
+    );
+    mask-image: radial-gradient(
+      circle 110px at var(--reveal-x, -1000px) var(--reveal-y, -1000px),
+      #000 0 82px,
+      transparent 110px
+    );
+  }
+
+  .footer-brand-image-reveal.is-active {
+    opacity: 1;
+  }
+}
+
+
 /* Footer columns */
 
 .footer-column {
@@ -4076,6 +4118,11 @@ html.boot-pending .loading-page,
   transform: translateY(0);
 }
 
+.footer-brand.reveal,
+.footer-brand.reveal.is-visible {
+  transform: none;
+}
+
 .footerimage.reveal {
   transform: translateY(35px) scale(0.92);
 }
@@ -4092,7 +4139,8 @@ html.boot-pending .loading-page,
     transition: none;
   }
 
-  .footerimage img {
+  .footerimage img,
+  .footer-brand img {
     animation: none;
   }
 }
