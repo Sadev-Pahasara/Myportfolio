@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealTargets = document.querySelectorAll(
     ".portfolio-header, .portfolio-card, .sec31, .services-header, .service-card, " +
-      ".skills-heading, .skills-subtitle, .skill-subtitles, .skills-card, .skill-card, " +
+      ".skills-heading, .skills-subtitle, .skill-subtitles, .skills-card, " +
       ".approach-heading, .approach-card, .contact-heading, .contact-info, " +
       ".contact-form-wrapper, .footer-brand, .footer-column, .footerimage"
   );
@@ -202,6 +202,178 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     progressBars.forEach((bar) => progressObserver.observe(bar));
+  }
+
+  const skillFilterNav = document.querySelector(".skill-filter-nav");
+  const skillGrid = document.querySelector("#skill-card-grid");
+
+  if (skillFilterNav && skillGrid) {
+    const skillCards = Array.from(skillGrid.querySelectorAll(".skill-card"));
+    const filterButtons = Array.from(
+      skillFilterNav.querySelectorAll("[data-skill-filter]")
+    );
+    const gsap = window.gsap;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const canAnimate = Boolean(gsap && !prefersReducedMotion);
+    let activeCategory = "all";
+    let filterTween = null;
+    let entranceObserver = null;
+
+    const restartProgressBars = (cards) => {
+      const bars = cards.flatMap((card) =>
+        Array.from(card.querySelectorAll(".progress-bar"))
+      );
+
+      bars.forEach((bar) => bar.classList.remove("is-visible"));
+      window.requestAnimationFrame(() => {
+        bars.forEach((bar) => {
+          if (!bar.closest(".skill-card")?.hidden) {
+            bar.classList.add("is-visible");
+          }
+        });
+      });
+    };
+
+    if (canAnimate) {
+      skillCards.forEach((card) =>
+        card.classList.add("is-filter-animating")
+      );
+      gsap.set(skillCards, { autoAlpha: 0, y: 14 });
+
+      const revealInitialCards = () => {
+        filterTween = gsap.to(skillCards, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.48,
+          stagger: 0.045,
+          ease: "power2.out",
+          onComplete: () => {
+            gsap.set(skillCards, {
+              clearProps: "opacity,visibility,transform",
+            });
+            skillCards.forEach((card) =>
+              card.classList.remove("is-filter-animating")
+            );
+            filterTween = null;
+          },
+        });
+      };
+
+      if ("IntersectionObserver" in window) {
+        entranceObserver = new IntersectionObserver(
+          (entries, observer) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              observer.disconnect();
+              entranceObserver = null;
+              revealInitialCards();
+            }
+          },
+          { threshold: 0.08 }
+        );
+        entranceObserver.observe(skillGrid);
+      } else {
+        revealInitialCards();
+      }
+    }
+
+    const updateFilter = (category) => {
+      if (category === activeCategory) return;
+      activeCategory = category;
+
+      filterButtons.forEach((button) => {
+        button.setAttribute(
+          "aria-pressed",
+          String(button.dataset.skillFilter === category)
+        );
+      });
+
+      if (entranceObserver) {
+        entranceObserver.disconnect();
+        entranceObserver = null;
+        gsap.set(skillCards, {
+          clearProps: "opacity,visibility,transform",
+        });
+      }
+
+      if (filterTween) {
+        filterTween.kill();
+        filterTween = null;
+      }
+
+      if (gsap) gsap.killTweensOf(skillCards);
+      skillCards.forEach((card) =>
+        card.classList.remove("is-filter-animating")
+      );
+
+      const matchingCards = skillCards.filter(
+        (card) => category === "all" || card.dataset.category === category
+      );
+
+      if (!canAnimate) {
+        skillCards.forEach((card) => {
+          card.hidden = !matchingCards.includes(card);
+        });
+        restartProgressBars(matchingCards);
+        return;
+      }
+
+      const visibleCards = skillCards.filter((card) => !card.hidden);
+      if (!visibleCards.length || !matchingCards.length) {
+        skillCards.forEach((card) => {
+          card.hidden = !matchingCards.includes(card);
+        });
+        restartProgressBars(matchingCards);
+        return;
+      }
+
+      visibleCards.forEach((card) =>
+        card.classList.add("is-filter-animating")
+      );
+      filterTween = gsap.to(visibleCards, {
+        autoAlpha: 0,
+        y: 8,
+        duration: 0.18,
+        stagger: 0.012,
+        ease: "power1.in",
+        onComplete: () => {
+          skillCards.forEach((card) => {
+            const shouldShow = matchingCards.includes(card);
+            card.hidden = !shouldShow;
+            card.classList.toggle("is-filter-animating", shouldShow);
+          });
+          gsap.set(skillCards, {
+            clearProps: "opacity,visibility,transform",
+          });
+          gsap.set(matchingCards, { autoAlpha: 0, y: 12 });
+          restartProgressBars(matchingCards);
+
+          filterTween = gsap.to(matchingCards, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.36,
+            stagger: 0.045,
+            ease: "power2.out",
+            onComplete: () => {
+              gsap.set(matchingCards, {
+                clearProps: "opacity,visibility,transform",
+              });
+              matchingCards.forEach((card) =>
+                card.classList.remove("is-filter-animating")
+              );
+              filterTween = null;
+            },
+          });
+        },
+      });
+    };
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        updateFilter(button.dataset.skillFilter);
+      });
+    });
   }
 
   const menuButton = document.querySelector(".menu-button");

@@ -813,12 +813,27 @@
 
             </section>
 
-            <h3 class="skill-subtitles">Programming Languages & Frameworks</h3> 
-            <h3 class="skill-subtitles">DevOps & Containerisation</h3>
+            <nav class="skill-filter-nav" aria-label="Filter skills by category">
+                <button class="skill-filter-button" type="button" data-skill-filter="all" aria-pressed="true" aria-controls="skill-card-grid">
+                    All Skills
+                </button>
+                <button class="skill-filter-button" type="button" data-skill-filter="programming" aria-pressed="false" aria-controls="skill-card-grid">
+                    Programming &amp; Frameworks
+                </button>
+                <button class="skill-filter-button" type="button" data-skill-filter="databases" aria-pressed="false" aria-controls="skill-card-grid">
+                    Databases
+                </button>
+                <button class="skill-filter-button" type="button" data-skill-filter="devops" aria-pressed="false" aria-controls="skill-card-grid">
+                    DevOps &amp; Tools
+                </button>
+                <button class="skill-filter-button" type="button" data-skill-filter="design" aria-pressed="false" aria-controls="skill-card-grid">
+                    Design &amp; 3D
+                </button>
+            </nav>
 
-            <section class="skills-section">
+            <section class="skills-section" id="skill-card-grid">
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>HTML/CSS/JS</h3>
                         <span>95%</span>
@@ -830,7 +845,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>PYTHON</h3>
                         <span>75%</span>
@@ -842,7 +857,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>Java</h3>
                         <span>80%</span>
@@ -854,7 +869,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>C++</h3>
                         <span>70%</span>
@@ -866,7 +881,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>C</h3>
                         <span>75%</span>
@@ -878,7 +893,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>C#</h3>
                         <span>70%</span>
@@ -890,7 +905,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>NODE.JS</h3>
                         <span>75%</span>
@@ -902,7 +917,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>REACT</h3>
                         <span>70%</span>
@@ -914,7 +929,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>.NET</h3>
                         <span>70%</span>
@@ -926,7 +941,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="programming">
                     <div class="skill-header">
                         <h3>PHP</h3>
                         <span>85%</span>
@@ -938,7 +953,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="databases">
                     <div class="skill-header">
                         <h3>MYSQL</h3>
                         <span>85%</span>
@@ -950,7 +965,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="databases">
                     <div class="skill-header">
                         <h3>SQLite</h3>
                         <span>70%</span>
@@ -962,7 +977,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="devops">
                     <div class="skill-header">
                         <h3>CLAUDE</h3>
                         <span>80%</span>
@@ -974,7 +989,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="design">
                     <div class="skill-header">
                         <h3>Figma</h3>
                         <span>82%</span>
@@ -986,7 +1001,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="design">
                     <div class="skill-header">
                         <h3>Blender</h3>
                         <span>75%</span>
@@ -998,7 +1013,7 @@
                 </div>
 
                 
-                <div class="skill-card">
+                <div class="skill-card" data-category="devops">
                     <div class="skill-header">
                         <h3>Kubernetes</h3>
                         <span>65%</span>
@@ -1010,7 +1025,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="devops">
                     <div class="skill-header">
                         <h3>Docker</h3>
                         <span>60%</span>
@@ -1022,7 +1037,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card" data-category="design">
                     <div class="skill-header">
                         <h3>Unreal Engine</h3>
                         <span>70%</span>

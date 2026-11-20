@@ -2582,6 +2582,86 @@ body.menu-open .menu-backdrop {
   margin-left: calc(50% - 50vw);
 }
 
+.skill-filter-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.8vw, 40px);
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0 0 28px calc(50% - 50vw);
+  padding: 0 80px 8px;
+  box-sizing: border-box;
+}
+
+.skill-filter-button {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: #96969e;
+  font-family: "Saira", sans-serif;
+  font-size: clamp(0.82rem, 1.05vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.skill-filter-button::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 1px;
+  background: #2e71de;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.skill-filter-button:hover,
+.skill-filter-button[aria-pressed="true"] {
+  color: #2e71de;
+}
+
+.skill-filter-button:hover::after,
+.skill-filter-button[aria-pressed="true"]::after {
+  transform: scaleX(1);
+}
+
+.skill-filter-button:focus-visible {
+  outline: 1px solid rgba(104, 135, 188, 0.65);
+  outline-offset: 5px;
+}
+
+@media (max-width: 768px) {
+  .skill-filter-nav {
+    justify-content: flex-start;
+    gap: 24px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    margin-bottom: 20px;
+    padding: 0 15px 10px;
+    scrollbar-width: none;
+  }
+
+  .skill-filter-nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .skill-filter-nav {
+    gap: clamp(12px, 2vw, 20px);
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
 
 /* =========================
    SKILL CARD
@@ -2600,12 +2680,22 @@ body.menu-open .menu-backdrop {
     inset 0 0 30px rgba(255, 255, 255, 0.01);
   transition:
     border-color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skill-card.is-filter-animating {
+  transition: none;
 }
 
 .skill-card:hover {
-  border-color: #2fbfeb;
+  border-color: rgba(34, 67, 166, 0.7);
   transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(104, 112, 188, 0.08);
+}
+
+.skill-card[hidden] {
+  display: none !important;
 }
 
 
@@ -3690,6 +3780,19 @@ body.menu-open .menu-backdrop {
     .progress-bar {
         height: 13px;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-filter-button,
+  .skill-filter-button::after,
+  .skill-card {
+    transition: none;
+  }
+
+  .progress-bar.is-visible .progress {
+    animation: none;
+    transform: scaleX(1);
+  }
 }
 
 
