@@ -352,7 +352,9 @@ html.boot-pending body {
   padding: 4rem 2rem;
   font-family: "Raleway", sans-serif;
   border-top: #00e5ff 2px solid;
-  background-image: url("src/bg.jpg");
+  background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("src/bg2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1099,8 +1101,9 @@ html.boot-pending body {
   top: -10%;
   position: relative;
   min-height: 100dvh;
-  /* background: #131313; */
-  background-image: url("src/bg.jpg");
+  background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("src/bg2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1330,8 +1333,8 @@ html.boot-pending body {
     height: 0%;
     background: var(--edu-accent);
     box-shadow:
-        0 0 8px rgba(118, 244, 255, 0.8),
-        0 0 22px rgba(118, 244, 255, 0.4);
+        0 0 8px rgba(21, 94, 230, 0.8),
+        0 0 22px rgba(79, 138, 249, 0.647);
 }
 
 /* EACH CARD */
