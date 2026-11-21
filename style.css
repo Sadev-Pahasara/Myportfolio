@@ -3801,7 +3801,7 @@ body.menu-open .menu-backdrop {
     .skill-subtitles {
       margin-left: 10%;
       text-align: center;
-      font-size: clamp(20px, 2vw, 36px);
+      font-size: clamp(15px, 2vw, 36px);
       font-weight: 700;
       margin-bottom: 20px;
       width: 80%;
@@ -3809,17 +3809,18 @@ body.menu-open .menu-backdrop {
     }
 
     .skill-card {
-        padding: 28px 22px;
-        border-radius: 24px;
+        padding: 8px 22px;
+        border-radius: 10px;
+        height: 20px;
     }
 
     .skill-header h3,
     .skill-header span {
-        font-size: 21px;
+        font-size: 15px;
     }
 
     .progress-bar {
-        height: 11px;
+        height: 5px;
     }
 }
 
